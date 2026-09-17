@@ -16,9 +16,26 @@
     });
   });
 
+  // ---- Nav colour transition after hero ----
+
+var nav = document.querySelector('.nav');
+var hero = document.querySelector('.hero');
+
+function updateNav() {
+  var heroBottom = hero.getBoundingClientRect().bottom;
+
+  if (heroBottom <= nav.offsetHeight) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+}
+
+window.addEventListener('scroll', updateNav);
+updateNav();
+
   // ---- RSVP submission to Google Sheet via Apps Script Web App ----
-  // 1. Follow the setup instructions provided alongside this file to create
-  //    your Apps Script Web App and paste its URL below.
+
   var SHEET_ENDPOINT = "REPLACE_WITH_YOUR_APPS_SCRIPT_WEB_APP_URL";
 
   var form = document.getElementById('rsvpForm');
@@ -57,29 +74,34 @@
     });
   });
 
-  // ---- RSVP form conditional logic ----
-const attendanceOptions = document.querySelectorAll('input[name="attending"]');
-const attendingFields = document.getElementById('attendingFields');
-const accommodation = document.getElementById('faccommodation');
-const dietary = document.getElementById('fdiet');
+// ---- RSVP form conditional logic ----
+var attendanceOptions = document.querySelectorAll('input[name="attending"]');
+var attendingFields = document.getElementById('attendingFields');
+var accommodation = document.getElementById('faccommodation');
+var dietary = document.getElementById('fdiet');
 
-attendanceOptions.forEach(option => {
-  option.addEventListener('change', () => {
+function updateAttendance(value) {
+  var isAttending = value === 'Yes!';
 
-    if (option.value === "Sorry can't come") {
-      attendingFields.style.display = 'none';
+  attendingFields.style.display = isAttending ? '' : 'none';
+  accommodation.required = isAttending;
+  dietary.required = isAttending;
+}
 
-      accommodation.required = false;
-      dietary.required = false;
-
-      accommodation.value = '';
-      dietary.value = '';
-    } else {
-      attendingFields.style.display = 'block';
-
-      accommodation.required = true;
-      dietary.required = true;
-    }
-
+attendanceOptions.forEach(function(option) {
+  option.addEventListener('change', function() {
+    localStorage.setItem('weddingAttendance', this.value);
+    updateAttendance(this.value);
   });
 });
+
+// Restore selection after refresh
+var savedAttendance = localStorage.getItem('weddingAttendance');
+
+if (savedAttendance) {
+  attendanceOptions.forEach(function(option) {
+    option.checked = option.value === savedAttendance;
+  });
+
+  updateAttendance(savedAttendance);
+}
