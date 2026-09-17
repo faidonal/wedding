@@ -795,6 +795,14 @@ textarea:focus-visible {
   .field.full {
     grid-column: 1;
   }
+  #programme .wrap {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  #programme .section-head {
+    text-align: center;
+  }
 }
 
 /* ================= LARGE DESKTOP (1920px+) ================= */
