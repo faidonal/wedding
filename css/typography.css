@@ -1,0 +1,36 @@
+/* Typography primitives */
+h1,h2,h3{
+  font-family:var(--serif);
+  font-weight:500;
+  margin:0;
+  color:var(--ink);
+}
+
+.text-display{
+  font-family:var(--serif);
+  font-size:var(--text-display);
+  line-height:1.02;
+}
+
+.text-heading{
+  font-family:var(--serif);
+  font-size:var(--text-h2);
+  line-height:1.15;
+}
+
+.text-kicker{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:var(--text-lg);
+}
+
+.text-body{
+  font-family:var(--sans);
+  font-size:var(--text-body);
+  line-height:1.6;
+}
+
+.text-small{
+  font-family:var(--sans);
+  font-size:var(--text-sm);
+}

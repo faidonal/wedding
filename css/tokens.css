@@ -1,0 +1,37 @@
+/* Design tokens — edit these to change the site's visual system globally. */
+:root{
+    --ivory:#FAF7F0;
+    --lime:#eeffe2;
+    --moss-10:#EEF1E8;
+    --ink:#2B2E26;
+    --moss:#566246;
+    --moss-dark:#3E4833;
+    --gold:#B08D57;
+    --plum:#6B4257;
+    --plum-dark:#552F41;
+    --line:#D8D2C4;
+    --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans:'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --maxw:1120px;
+  }
+
+:root{
+  /* Type scale */
+  --text-xs:0.85rem;
+  --text-sm:0.92rem;
+  --text-body:1rem;
+  --text-lg:1.05rem;
+  --text-h3:1.25rem;
+  --text-h2:clamp(1.9rem, 3.4vw, 2.6rem);
+  --text-display:clamp(2.6rem, 7vw, 5.6rem);
+
+  /* Spacing */
+  --space-xs:8px;
+  --space-sm:16px;
+  --space-md:32px;
+  --space-lg:56px;
+  --space-xl:96px;
+
+  /* Shape */
+  --radius-sm:8px;
+}

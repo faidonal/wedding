@@ -249,67 +249,69 @@
         <p class="rsvp-deadline">RSVP deadline: 1 April 2027</p>
       </div>
       <form class="form-grid" id="rsvpForm">
+        <div class="field full">
+          <label for="fnames">Your names</label>
+          <input
+            type="text"
+            id="fnames"
+            name="names"
+            placeholder="e.g. Jane & John"
+            required
+          >
+        </div>
 
-  <div class="field full">
-    <label for="fnames">Your names</label>
-    <input
-      type="text"
-      id="fnames"
-      name="names"
-      placeholder="e.g. Jane & John"
-      required
-    >
-  </div>
+        <div class="field full">
+          <label>Will you be attending?</label>
+          <div class="radio-row">
+            <label>
+              <input type="radio" name="attending" value="Yes!" required>
+              Yes!
+            </label>
+            <label>
+              <input type="radio" name="attending" value="Sorry can't come" required>
+              Sorry can't come
+            </label>
+          </div>
+        </div>
 
-  <div class="field full">
-    <label>Will you be attending?</label>
-    <div class="radio-row">
-      <label>
-        <input type="radio" name="attending" value="Yes!" required>
-        Yes!
-      </label>
-      <label>
-        <input type="radio" name="attending" value="Sorry can't come" required>
-        Sorry can't come
-      </label>
-    </div>
-  </div>
+        <div id="attendingFields">
 
-  <div class="field full">
-    <label for="faccommodation">Accommodation</label>
-    <select id="faccommodation" name="accommodation" required>
-      <option value="" disabled selected>Please select</option>
-      <option value="Arranging own lodging nearby">Arranging own lodging nearby</option>
-      <option value="I / We can camp">I / We can camp</option>
-      <option value="Going back to London">Going back to London</option>
-    </select>
-  </div>
+        <div class="field full">
+          <label for="faccommodation">Accommodation</label>
+          <select id="faccommodation" name="accommodation" required>
+            <option value="" disabled selected>Please select</option>
+            <option value="Arranging own lodging nearby">Arranging own lodging nearby</option>
+            <option value="I can camp">I can camp</option>
+            <option value="Going back to London">Going back to London</option>
+          </select>
+        </div>
 
-  <div class="field full">
-    <label for="fdiet">Any dietary restrictions</label>
-    <input
-      type="text"
-      id="fdiet"
-      name="dietary"
-      placeholder="Write none if there aren't any"
-      required
-    >
-  </div>
+        <div class="field full">
+          <label for="fdiet">Any dietary restrictions</label>
+          <input
+            type="text"
+            id="fdiet"
+            name="dietary"
+            placeholder="Write none if there aren't any"
+            required
+          >
+        </div>
 
-  <div class="field full">
-    <label for="fmsg">Any messages for us</label>
-    <textarea
-      id="fmsg"
-      name="message"
-      rows="5"
-      placeholder="Write us a message"
-      required
-    ></textarea>
-  </div>
+      </div>
 
-  <button type="submit" class="btn rsvp-submit">Send RSVP</button>
-  <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+        <div class="field full">
+          <label for="fmsg">Any messages for us</label>
+          <textarea
+            id="fmsg"
+            name="message"
+            rows="5"
+            placeholder="Write us a message"
+            required
+          ></textarea>
+        </div>
 
+        <button type="submit" class="btn rsvp-submit">Send RSVP</button>
+        <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
 </form>
     </div>
   </div>
