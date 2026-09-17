@@ -249,45 +249,68 @@
         <p class="rsvp-deadline">RSVP deadline: 1 April 2027</p>
       </div>
       <form class="form-grid" id="rsvpForm">
-        <div class="field">
-          <label for="fname">Full name</label>
-          <input type="text" id="fname" name="name" placeholder="Jane Smith" required>
-        </div>
-        <div class="field">
-          <label for="femail">Email</label>
-          <input type="email" id="femail" name="email" placeholder="jane@example.com" required>
-        </div>
-        <div class="field full">
-          <label>Will you be joining us?</label>
-          <div class="radio-row">
-            <label><input type="radio" name="attending" value="Yes" required> Joyfully accept</label>
-            <label><input type="radio" name="attending" value="No" required> Regretfully decline</label>
-          </div>
-        </div>
-        <div class="field">
-          <label for="fguests">Number attending (incl. you)</label>
-          <input type="number" id="fguests" name="guests" min="1" max="4" value="1">
-        </div>
-        <div class="field">
-          <label for="fmenu">Menu choice</label>
-          <select id="fmenu" name="menu">
-            <option value="">Select one</option>
-            <option>Herb-roasted chicken</option>
-            <option>Wild mushroom Wellington (veg)</option>
-            <option>Pan-seared trout</option>
-          </select>
-        </div>
-        <div class="field full">
-          <label for="fdiet">Dietary requirements or allergies</label>
-          <input type="text" id="fdiet" name="dietary" placeholder="e.g. nut allergy, gluten-free">
-        </div>
-        <div class="field full">
-          <label for="fmsg">A note for the happy couple (optional)</label>
-          <textarea id="fmsg" name="message" rows="3" placeholder="Song requests, well wishes, anything at all"></textarea>
-        </div>
-        <button type="submit" class="btn rsvp-submit">Send RSVP</button>
-        <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
-      </form>
+
+  <div class="field full">
+    <label for="fnames">Your names</label>
+    <input
+      type="text"
+      id="fnames"
+      name="names"
+      placeholder="e.g. Jane & John"
+      required
+    >
+  </div>
+
+  <div class="field full">
+    <label>Will you be attending?</label>
+    <div class="radio-row">
+      <label>
+        <input type="radio" name="attending" value="Yes!" required>
+        Yes!
+      </label>
+      <label>
+        <input type="radio" name="attending" value="Sorry can't come" required>
+        Sorry can't come
+      </label>
+    </div>
+  </div>
+
+  <div class="field full">
+    <label for="faccommodation">Accommodation</label>
+    <select id="faccommodation" name="accommodation" required>
+      <option value="" disabled selected>Please select</option>
+      <option value="Arranging own lodging nearby">Arranging own lodging nearby</option>
+      <option value="I / We can camp">I / We can camp</option>
+      <option value="Going back to London">Going back to London</option>
+    </select>
+  </div>
+
+  <div class="field full">
+    <label for="fdiet">Any dietary restrictions</label>
+    <input
+      type="text"
+      id="fdiet"
+      name="dietary"
+      placeholder="Write none if there aren't any"
+      required
+    >
+  </div>
+
+  <div class="field full">
+    <label for="fmsg">Any messages for us</label>
+    <textarea
+      id="fmsg"
+      name="message"
+      rows="5"
+      placeholder="Write us a message"
+      required
+    ></textarea>
+  </div>
+
+  <button type="submit" class="btn rsvp-submit">Send RSVP</button>
+  <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+
+</form>
     </div>
   </div>
 </section>
