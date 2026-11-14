@@ -22,7 +22,7 @@ window.I18N = {
     "nav.close": "Stäng menyn",
     "lang.label": "Språk",
 
-    "nav.details": "Översikt",
+    "nav.overview": "Översikt",
     "nav.programme": "Tider",
     "nav.travel": "Hitta hit",
     "nav.faq": "Detaljer",
@@ -33,13 +33,13 @@ window.I18N = {
     "hero.rsvp": "OSA senast 1 februari 2027",
     "hero.details": "Se detaljerna",
 
-    "basics.dateLabel": "Datum",
-    "basics.date": "29 maj 2027",
-    "basics.dateSub": "Ankomst från kl. 13.00",
-    "basics.whereLabel": "Plats",
-    "basics.dressLabel": "Klädkod",
-    "basics.dress": "Kavaj, lantlig stil",
-    "basics.dressSub": "Tänk trädgårdsfest och midsommar, inte smoking",
+    "overview.dateLabel": "Datum",
+    "overview.date": "29 maj 2027",
+    "overview.dateSub": "Ankomst från kl. 13.00",
+    "overview.whereLabel": "Plats",
+    "overview.dressLabel": "Klädkod",
+    "overview.dress": "Kavaj, lantlig stil",
+    "overview.dressSub": "Tänk trädgårdsfest och midsommar, inte smoking",
 
     "details.h": "Allt ni behöver veta",
     "details.dress.h": "Klädkod",
@@ -175,7 +175,7 @@ window.I18N = {
     "nav.close": "Κλείσιμο μενού",
     "lang.label": "Γλώσσα",
 
-    "nav.details": "Σύνοψη",
+    "nav.overview": "Σύνοψη",
     "nav.programme": "Πρόγραμμα",
     "nav.travel": "Πρόσβαση",
     "nav.faq": "Λεπτομέρειες",
@@ -186,13 +186,13 @@ window.I18N = {
     "hero.rsvp": "Απαντήστε έως 1 Φεβρουαρίου 2027",
     "hero.details": "Δείτε τις λεπτομέρειες",
 
-    "basics.dateLabel": "Ημερομηνία",
-    "basics.date": "29 Μαΐου 2027",
-    "basics.dateSub": "Άφιξη από τις 13:00",
-    "basics.whereLabel": "Τοποθεσία",
-    "basics.dressLabel": "Ενδυμασία",
-    "basics.dress": "Κομψό εξοχικό ντύσιμο",
-    "basics.dressSub":
+    "overview.dateLabel": "Ημερομηνία",
+    "overview.date": "29 Μαΐου 2027",
+    "overview.dateSub": "Άφιξη από τις 13:00",
+    "overview.whereLabel": "Τοποθεσία",
+    "overview.dressLabel": "Ενδυμασία",
+    "overview.dress": "Κομψό εξοχικό ντύσιμο",
+    "overview.dressSub":
       "Σκεφτείτε γιορτή σε κήπο ή σουηδικό Midsommar, όχι επίσημο βραδινό ένδυμα",
 
     "details.h": "Όλα όσα χρειάζεται να ξέρετε",
@@ -329,7 +329,7 @@ window.I18N = {
     "nav.close": "Cerrar menú",
     "lang.label": "Idioma",
 
-    "nav.details": "Resumen",
+    "nav.overview": "Resumen",
     "nav.programme": "Horario",
     "nav.travel": "Cómo llegar",
     "nav.faq": "Detalles",
@@ -340,13 +340,13 @@ window.I18N = {
     "hero.rsvp": "Confirmen antes del 1 de febrero de 2027",
     "hero.details": "Ver los detalles",
 
-    "basics.dateLabel": "Fecha",
-    "basics.date": "29 de mayo de 2027",
-    "basics.dateSub": "Llegada a partir de la 1:00 p. m.",
-    "basics.whereLabel": "Lugar",
-    "basics.dressLabel": "Código de vestimenta",
-    "basics.dress": "Formal campestre",
-    "basics.dressSub":
+    "overview.dateLabel": "Fecha",
+    "overview.date": "29 de mayo de 2027",
+    "overview.dateSub": "Llegada a partir de la 1:00 p. m.",
+    "overview.whereLabel": "Lugar",
+    "overview.dressLabel": "Código de vestimenta",
+    "overview.dress": "Formal campestre",
+    "overview.dressSub":
       "Piensen en una fiesta en el jardín o un Midsommar sueco, no en etiqueta rigurosa",
 
     "details.h": "Todo lo que necesitan saber",

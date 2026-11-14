@@ -42,7 +42,7 @@ a {
 
 /* ---------- Focus ---------- */
 .hero,
-.nav:not(.scrolled),
+.nav:not(.scrolled):not(.menu-open),
 .rsvp-shell {
   --focus: var(--color-accent);
 }
@@ -134,9 +134,14 @@ textarea:focus-visible {
     background-color var(--dur-base) ease,
     box-shadow var(--dur-base) ease;
 }
-.nav.scrolled {
+.nav.scrolled,
+.nav.menu-open {
   background: var(--color-bg);
   box-shadow: var(--shadow-nav);
+}
+/* No shadow line between the bar and the open menu below it */
+.nav.menu-open {
+  box-shadow: none;
 }
 .nav-inner {
   max-width: var(--maxw);
@@ -171,6 +176,7 @@ textarea:focus-visible {
   transition: color var(--dur-base) ease;
 }
 .nav.scrolled .nav-mark,
+.nav.menu-open .nav-mark,
 .nav.scrolled .nav-links a {
   color: var(--color-text);
 }
@@ -251,7 +257,8 @@ textarea:focus-visible {
     opacity var(--dur-fast) ease,
     background-color var(--dur-base) ease;
 }
-.nav.scrolled .nav-burger span {
+.nav.scrolled .nav-burger span,
+.nav.menu-open .nav-burger span {
   background-color: var(--color-text);
 }
 .nav-burger.open span:nth-child(1) {
@@ -386,17 +393,17 @@ section {
 }
 
 /* ---------- Key facts ---------- */
-.basics {
+.overview {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
 }
-.basic-item {
+.overview-item {
   padding: var(--space-6);
   background: var(--color-surface);
   border-radius: var(--radius-md);
 }
-.basic-icon {
+.overview-icon {
   display: grid;
   place-items: center;
   width: var(--tap);
@@ -406,22 +413,22 @@ section {
   background: var(--color-bg);
   color: var(--color-text-accent);
 }
-.basic-icon svg {
+.overview-icon svg {
   width: 22px;
   height: 22px;
 }
-.basic-item .label {
+.overview-item .label {
   display: block;
   font-size: var(--text-sm);
   font-weight: var(--weight-bold);
   color: var(--color-text-accent);
 }
-.basic-item .value {
+.overview-item .value {
   margin-top: var(--space-2);
   font-family: var(--serif);
   font-size: var(--text-lg);
 }
-.basic-item .sub {
+.overview-item .sub {
   margin-top: var(--space-1);
   font-size: var(--text-sm);
   color: var(--color-text-muted);
@@ -848,18 +855,17 @@ footer p {
    language switches to the menu button below 1025px. Keep in sync with
    MENU_QUERY in js/main.js. */
 @media (max-width: 1024px) {
+  /* The open menu covers the whole screen, running up behind the bar */
   .nav-links {
     position: fixed;
-    top: var(--nav-h);
-    left: 0;
-    right: 0;
-    height: calc(100vh - var(--nav-h));
-    height: calc(100dvh - var(--nav-h));
+    inset: 0;
+    height: 100vh;
+    height: 100dvh;
     overflow-y: auto;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: var(--space-3) var(--gutter) var(--space-5);
+    padding: calc(var(--nav-h) + var(--space-3)) var(--gutter) var(--space-5);
     background: var(--color-bg);
     box-shadow: var(--shadow-menu);
     transform: translateY(-120%);
@@ -887,6 +893,13 @@ footer p {
   .nav-cta {
     order: 1;
     margin-left: auto;
+  }
+  /* The bar's own items stay above the full-screen menu */
+  .nav-mark,
+  .nav-cta,
+  .nav-burger {
+    position: relative;
+    z-index: 50;
   }
   .nav-links .lang-item {
     padding-top: var(--space-5);
@@ -923,14 +936,14 @@ footer p {
     align-items: stretch;
   }
 
-  .basics,
+  .overview,
   .details-grid,
   .travel-grid,
   .form-grid,
   #programme .wrap {
     grid-template-columns: 1fr;
   }
-  .basic-item {
+  .overview-item {
     padding: var(--space-5);
   }
   .details-grid {

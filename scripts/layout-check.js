@@ -34,7 +34,7 @@
         r.push("past the screen edge: " + label(e));
     });
 
-    document.querySelectorAll(".rsvp-shell, .basic-item, .programme-item, .detail-card, .faq-item, .travel-col").forEach((box) => {
+    document.querySelectorAll(".rsvp-shell, .overview-item, .programme-item, .detail-card, .faq-item, .travel-col").forEach((box) => {
       const bb = box.getBoundingClientRect();
       box.querySelectorAll("*").forEach((e) => {
         const b = e.getBoundingClientRect();

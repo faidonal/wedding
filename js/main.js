@@ -114,6 +114,8 @@
   function setMenu(open, returnFocus) {
     navLinks.classList.toggle("open", open);
     burger.classList.toggle("open", open);
+    // The bar fills while the menu is open, so the menu reads as one sheet
+    nav.classList.toggle("menu-open", open);
     burger.setAttribute("aria-expanded", open ? "true" : "false");
     burger.setAttribute("aria-label", t(open ? "nav.close" : "nav.open"));
     document.body.style.overflow = open ? "hidden" : "";
@@ -153,20 +155,22 @@
     });
   }
 
-  // ---- Nav colour change once the hero has scrolled away ----
+  // ---- Nav fills once the hero is half scrolled away ----
+  // Filling at the halfway point (not when the hero has fully gone) means the
+  // bar is already solid when a nav link jumps to the first section.
   var hero = document.querySelector(".hero");
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(
       function (entries) {
         nav.classList.toggle("scrolled", !entries[0].isIntersecting);
       },
-      { rootMargin: "-" + nav.offsetHeight + "px 0px 0px 0px" }
+      { rootMargin: "-50% 0px 0px 0px" }
     ).observe(hero);
   } else {
     var updateNav = function () {
       nav.classList.toggle(
         "scrolled",
-        hero.getBoundingClientRect().bottom <= nav.offsetHeight
+        hero.getBoundingClientRect().bottom <= window.innerHeight / 2
       );
     };
     window.addEventListener("scroll", updateNav, { passive: true });
