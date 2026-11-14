@@ -14,6 +14,92 @@
     },
   };
 
+  // ---- Language: English is in the page, Swedish and Greek in translations.js ----
+  var LANGS = ["en", "sv", "el"];
+  var LANG_KEY = "weddingLang";
+  var dict = window.I18N || {};
+  var listeners = [];
+  var lang = "en";
+
+  // Remember each element's English so switching back needs no second copy
+  var originalText = new Map();
+  var originalAttr = new Map();
+  document.querySelectorAll("[data-i18n]").forEach(function (el) {
+    originalText.set(el, el.textContent);
+  });
+  document.querySelectorAll("[data-i18n-attr]").forEach(function (el) {
+    var attrs = {};
+    el.getAttribute("data-i18n-attr").split(";").forEach(function (pair) {
+      var name = pair.split(":")[0].trim();
+      attrs[name] = el.getAttribute(name);
+    });
+    originalAttr.set(el, attrs);
+  });
+
+  function t(key) {
+    var table = dict[lang] || {};
+    if (key in table) return table[key];
+    return (dict.en && dict.en[key]) || key;
+  }
+
+  function applyLang(next) {
+    lang = LANGS.indexOf(next) > -1 ? next : "en";
+    document.documentElement.lang = lang;
+    document.title = t("meta.title");
+
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n");
+      var table = dict[lang] || {};
+      if (lang !== "en" && key in table) {
+        el.textContent = table[key];
+      } else if (originalText.has(el)) {
+        el.textContent = originalText.get(el);
+      } else {
+        el.textContent = t(key); // set from code, e.g. the form message
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-attr]").forEach(function (el) {
+      el.getAttribute("data-i18n-attr").split(";").forEach(function (pair) {
+        var parts = pair.split(":");
+        var name = parts[0].trim();
+        var key = parts[1].trim();
+        var table = dict[lang] || {};
+        var value =
+          lang !== "en" && key in table
+            ? table[key]
+            : (originalAttr.get(el) || {})[name];
+        if (value != null) el.setAttribute(name, value);
+      });
+    });
+
+    document.querySelectorAll(".lang-switch [data-lang]").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false");
+    });
+    listeners.forEach(function (fn) { fn(lang); });
+  }
+
+  function initialLang() {
+    var fromUrl = new URLSearchParams(window.location.search).get("lang");
+    if (fromUrl && LANGS.indexOf(fromUrl) > -1) return fromUrl;
+    var saved = store.get(LANG_KEY);
+    if (saved && LANGS.indexOf(saved) > -1) return saved;
+    var prefs = navigator.languages || [navigator.language || "en"];
+    for (var i = 0; i < prefs.length; i++) {
+      var code = String(prefs[i]).toLowerCase().slice(0, 2);
+      if (code === "sv" || code === "el") return code;
+      if (code === "en") return "en";
+    }
+    return "en";
+  }
+
+  document.querySelectorAll(".lang-switch [data-lang]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      store.set(LANG_KEY, b.dataset.lang);
+      applyLang(b.dataset.lang);
+    });
+  });
+
   // ---- Mobile nav ----
   var nav = document.querySelector(".nav");
   var burger = document.getElementById("burgerBtn");
@@ -27,7 +113,7 @@
     navLinks.classList.toggle("open", open);
     burger.classList.toggle("open", open);
     burger.setAttribute("aria-expanded", open ? "true" : "false");
-    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    burger.setAttribute("aria-label", t(open ? "nav.close" : "nav.open"));
     document.body.style.overflow = open ? "hidden" : "";
     if (open) {
       var first = navLinks.querySelector("a");
@@ -39,6 +125,9 @@
 
   burger.addEventListener("click", function () {
     setMenu(!isOpen(), true);
+  });
+  listeners.push(function () {
+    burger.setAttribute("aria-label", t(isOpen() ? "nav.close" : "nav.open"));
   });
   navLinks.querySelectorAll("a").forEach(function (a) {
     a.addEventListener("click", function () {
@@ -52,8 +141,10 @@
   document.addEventListener("focusin", function (e) {
     if (isOpen() && !nav.contains(e.target)) setMenu(false, false);
   });
-  // Growing past the mobile breakpoint while the menu is open resets it
-  var mobileQuery = window.matchMedia("(max-width: 720px)");
+  // Growing past the menu-button breakpoint while the menu is open resets it.
+  // Keep in sync with the MENU BUTTON media query in css/styles.css.
+  var MENU_QUERY = "(max-width: 1024px)";
+  var mobileQuery = window.matchMedia(MENU_QUERY);
   if (mobileQuery.addEventListener) {
     mobileQuery.addEventListener("change", function (e) {
       if (!e.matches && isOpen()) setMenu(false, false);
@@ -78,6 +169,25 @@
     };
     window.addEventListener("scroll", updateNav, { passive: true });
     updateNav();
+  }
+
+  // ---- Programme rows arrive in order, once, when the list scrolls in ----
+  var programme = document.querySelector(".programme-list");
+  if (programme && "IntersectionObserver" in window) {
+    programme.querySelectorAll(".programme-item").forEach(function (item, i) {
+      item.style.setProperty("--i", i);
+    });
+    document.documentElement.classList.add("js-reveal");
+    var revealer = new IntersectionObserver(
+      function (entries) {
+        if (entries[0].isIntersecting) {
+          programme.classList.add("in-view");
+          revealer.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -15% 0px" }
+    );
+    revealer.observe(programme);
   }
 
   // ---- RSVP form: show attendance-only fields when attending ----
@@ -122,8 +232,15 @@
   var submitBtn = form.querySelector(".rsvp-submit");
   var honeypot = document.getElementById("fcompany");
 
-  function setMsg(text, kind) {
-    msg.textContent = text;
+  // Messages carry their key, so they re-translate if the language changes
+  function setMsg(key, kind) {
+    if (key) {
+      msg.setAttribute("data-i18n", key);
+      msg.textContent = t(key);
+    } else {
+      msg.removeAttribute("data-i18n");
+      msg.textContent = "";
+    }
     msg.className = "form-msg" + (kind ? " " + kind : "");
   }
 
@@ -131,7 +248,7 @@
     store.remove(ATTEND_KEY);
     form.reset();
     updateAttendance(null);
-    setMsg("Thank you, your RSVP has been sent.", "ok");
+    setMsg("form.sent", "ok");
   }
 
   form.addEventListener("submit", function (e) {
@@ -148,7 +265,7 @@
     data.delete("company");
 
     submitBtn.disabled = true;
-    submitBtn.textContent = "Sending…";
+    submitBtn.textContent = t("form.sending");
     form.setAttribute("aria-busy", "true");
 
     var controller = window.AbortController ? new AbortController() : null;
@@ -167,17 +284,18 @@
       .then(finishSent)
       .catch(function (err) {
         setMsg(
-          err && err.name === "AbortError"
-            ? "This is taking too long. Check your connection, then send again."
-            : "Your RSVP didn't send. Check your connection, then send again.",
+          err && err.name === "AbortError" ? "form.timeout" : "form.failed",
           "err"
         );
       })
       .finally(function () {
         if (timer) clearTimeout(timer);
         submitBtn.disabled = false;
-        submitBtn.textContent = "Send RSVP";
+        submitBtn.textContent = t("form.submit");
         form.removeAttribute("aria-busy");
       });
   });
+
+  // Apply the language last, once every listener above is registered
+  applyLang(initialLang());
 })();

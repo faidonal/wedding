@@ -42,12 +42,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Karla:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Karla:wght@400;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Commissioner:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/tokens.css" />
-    <link rel="stylesheet" href="css/typography.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/tokens.css?v=6" />
+    <link rel="stylesheet" href="css/typography.css?v=6" />
+    <link rel="stylesheet" href="css/styles.css?v=6" />
   </head>
   <body>
     <nav class="nav" aria-label="Main">
@@ -63,14 +63,20 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#details">Details</a></li>
-          <li><a href="#programme">Programme</a></li>
-          <li><a href="#travel">Getting There</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#rsvp" class="nav-cta nav-cta-mobile">RSVP</a></li>
+          <li><a class="link-draw" href="#details" data-i18n="nav.details">Details</a></li>
+          <li><a class="link-draw" href="#programme" data-i18n="nav.programme">Programme</a></li>
+          <li><a class="link-draw" href="#travel" data-i18n="nav.travel">Getting There</a></li>
+          <li><a class="link-draw" href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a class="link-draw" href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+          <li class="lang-item">
+            <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.label">
+              <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
+              <button type="button" data-lang="sv" lang="sv" aria-label="Svenska" aria-pressed="false">SV</button>
+              <button type="button" data-lang="el" lang="el" aria-label="Ελληνικά" aria-pressed="false">ΕΛ</button>
+            </div>
+          </li>
         </ul>
-        <a href="#rsvp" class="nav-cta">RSVP</a>
+        <a href="#rsvp" class="btn btn-primary btn-sm nav-cta" data-i18n="nav.rsvp">RSVP</a>
       </div>
     </nav>
 
@@ -78,14 +84,14 @@
       <div class="hero-bg"></div>
       <div class="hero-scrim"></div>
       <div class="hero-inner">
-        <span class="hero-eyebrow">We're getting married</span>
+        <span class="hero-eyebrow" data-i18n="hero.eyebrow">We're getting married</span>
         <h1 class="hero-names">Kirsten &amp; Faidon</h1>
-        <p class="hero-date">
+        <p class="hero-date" data-i18n="hero.date">
           Saturday, 29th of May 2027, Hatfield Regis Grange
         </p>
         <div class="hero-actions">
-          <a href="#rsvp" class="btn btn-primary">RSVP by 1st February 2027</a>
-          <a href="#details" class="btn btn-ghost">See the details</a>
+          <a href="#rsvp" class="btn btn-primary" data-i18n="hero.rsvp">RSVP by 1st February 2027</a>
+          <a href="#details" class="btn btn-ghost" data-i18n="hero.details">See the details</a>
         </div>
       </div>
     </header>
@@ -95,19 +101,19 @@
         <div class="wrap">
           <div class="basics">
             <div class="basic-item">
-              <span class="label">Date</span>
-              <div class="value">29th May 2027</div>
-              <div class="sub">Saturday, arrive from 12:00</div>
+              <span class="label" data-i18n="basics.dateLabel">Date</span>
+              <div class="value" data-i18n="basics.date">29th May 2027</div>
+              <div class="sub" data-i18n="basics.dateSub">Saturday, arrive from 12:00</div>
             </div>
             <div class="basic-item">
-              <span class="label">Where</span>
+              <span class="label" data-i18n="basics.whereLabel">Where</span>
               <div class="value">Hatfield Regis Grange Farm</div>
               <div class="sub">CM22 7JQ</div>
             </div>
             <div class="basic-item">
-              <span class="label">Dress Code</span>
-              <div class="value">Country Formal</div>
-              <div class="sub">
+              <span class="label" data-i18n="basics.dressLabel">Dress Code</span>
+              <div class="value" data-i18n="basics.dress">Country Formal</div>
+              <div class="sub" data-i18n="basics.dressSub">
                 Think garden party, Swedish Midsommar, not black tie
               </div>
             </div>
@@ -118,49 +124,49 @@
       <section id="details" class="band">
         <div class="wrap">
           <div class="section-head">
-            <span class="kicker">The finer points</span>
-            <h2>Everything you need to know</h2>
-            <p>
+            <span class="kicker" data-i18n="details.kicker">The finer points</span>
+            <h2 data-i18n="details.h">Everything you need to know</h2>
+            <p data-i18n="details.intro">
               A few more details to help you plan your day with us — more will
               follow closer to the date.
             </p>
           </div>
           <div class="details-grid">
             <div class="detail-card">
-              <h3>Dress Code</h3>
-              <p>
+              <h3 data-i18n="details.dress.h">Dress Code</h3>
+              <p data-i18n="details.dress.p1">
                 Country formal. Think floaty dresses, linen suits and
                 comfortable shoes — the reception spills onto grass in the
                 evening.
               </p>
-              <p>Bring a layer; barn evenings can turn cool.</p>
+              <p data-i18n="details.dress.p2">Bring a layer; barn evenings can turn cool.</p>
             </div>
             <div class="detail-card">
-              <h3>Accommodation</h3>
-              <p>
+              <h3 data-i18n="details.acc.h">Accommodation</h3>
+              <p data-i18n="details.acc.p1">
                 We've held a block of rooms at The Wheatsheaf Inn, a 10-minute
                 drive away, under "Alex &amp; Jordan."
               </p>
-              <p>
+              <p data-i18n="details.acc.p2">
                 Camping on-site is also available — let us know if you'd like a
                 pitch.
               </p>
             </div>
             <div class="detail-card">
-              <h3>Gifts</h3>
-              <p>
+              <h3 data-i18n="details.gifts.h">Gifts</h3>
+              <p data-i18n="details.gifts.p">
                 Your presence is truly the present. If you'd like to give
                 something, we've set up a honeymoon fund — details on the RSVP
                 form.
               </p>
             </div>
             <div class="detail-card">
-              <h3>Children &amp; Plus-Ones</h3>
-              <p>
+              <h3 data-i18n="details.kids.h">Children &amp; Plus-Ones</h3>
+              <p data-i18n="details.kids.p1">
                 We love your little ones, but our day is adults-only, with the
                 exception of immediate family.
               </p>
-              <p>
+              <p data-i18n="details.kids.p2">
                 Plus-ones are noted on your invitation — just let us know who's
                 joining.
               </p>
@@ -172,43 +178,43 @@
       <section id="programme">
         <div class="wrap">
           <div class="section-head">
-            <span class="kicker">The day itself</span>
-            <h2>Programme</h2>
+            <span class="kicker" data-i18n="prog.kicker">The day itself</span>
+            <h2 data-i18n="prog.h">Programme</h2>
           </div>
           <ul class="programme-list">
             <li class="programme-item">
-              <span class="programme-time">3:30pm</span>
+              <span class="programme-time" data-i18n="prog.1.time">3:30pm</span>
               <div class="programme-event">
-                <h3>Guests arrive</h3>
-                <p>Please be seated in the orchard by 3:50pm.</p>
+                <h3 data-i18n="prog.1.h">Guests arrive</h3>
+                <p data-i18n="prog.1.p">Please be seated in the orchard by 3:50pm.</p>
               </div>
             </li>
             <li class="programme-item">
-              <span class="programme-time">4:00pm</span>
+              <span class="programme-time" data-i18n="prog.2.time">4:00pm</span>
               <div class="programme-event">
-                <h3>Ceremony</h3>
-                <p>Under the old oak in the orchard, weather permitting.</p>
+                <h3 data-i18n="prog.2.h">Ceremony</h3>
+                <p data-i18n="prog.2.p">Under the old oak in the orchard, weather permitting.</p>
               </div>
             </li>
             <li class="programme-item">
-              <span class="programme-time">4:30pm</span>
+              <span class="programme-time" data-i18n="prog.3.time">4:30pm</span>
               <div class="programme-event">
-                <h3>Drinks &amp; canapés</h3>
-                <p>Fizz on the lawn while we take photographs.</p>
+                <h3 data-i18n="prog.3.h">Drinks &amp; canapés</h3>
+                <p data-i18n="prog.3.p">Fizz on the lawn while we take photographs.</p>
               </div>
             </li>
             <li class="programme-item">
-              <span class="programme-time">8:30pm</span>
+              <span class="programme-time" data-i18n="prog.4.time">8:30pm</span>
               <div class="programme-event">
-                <h3>First dance &amp; Ceilidh</h3>
-                <p>Music, dancing and a late-night snack.</p>
+                <h3 data-i18n="prog.4.h">First dance &amp; Ceilidh</h3>
+                <p data-i18n="prog.4.p">Music, dancing and a late-night snack.</p>
               </div>
             </li>
             <li class="programme-item">
-              <span class="programme-time">11:30pm</span>
+              <span class="programme-time" data-i18n="prog.5.time">11:30pm</span>
               <div class="programme-event">
-                <h3>Carriages</h3>
-                <p>
+                <h3 data-i18n="prog.5.h">Carriages</h3>
+                <p data-i18n="prog.5.p">
                   Taxis booked for 11:30pm and midnight — ask us if you need one
                   arranged.
                 </p>
@@ -221,36 +227,38 @@
       <section id="travel" class="band">
         <div class="wrap">
           <div class="section-head">
-            <span class="kicker">Find us</span>
-            <h2>How to get there</h2>
+            <span class="kicker" data-i18n="travel.kicker">Find us</span>
+            <h2 data-i18n="travel.h">How to get there</h2>
           </div>
           <div class="travel-grid">
             <div class="travel-col">
-              <h3>By Car</h3>
+              <h3 data-i18n="travel.car.h">By Car</h3>
               <p>
                 Hartwell Barn, Fossway, Stow-on-the-Wold, Gloucestershire GL54
                 1AA.
               </p>
-              <p>
+              <p data-i18n="travel.car.p2">
                 Free on-site parking is available in the north field — follow
                 signs from the main gate. Please arrange a designated driver or
                 taxi for the evening, as country lanes are unlit.
               </p>
               <a class="map-link" href="#" target="_blank" rel="noopener"
+                 data-i18n="travel.maps"
                 >Open in Google Maps</a
               >
             </div>
             <div class="travel-col">
-              <h3>By Train</h3>
-              <p>
+              <h3 data-i18n="travel.train.h">By Train</h3>
+              <p data-i18n="travel.train.p1">
                 The nearest station is Moreton-in-Marsh (20 minutes by taxi),
                 with regular trains from London Paddington.
               </p>
-              <p>
+              <p data-i18n="travel.train.p2">
                 Let us know your arrival time on the RSVP form and we'll do our
                 best to help coordinate lifts from the station.
               </p>
               <a class="map-link" href="#" target="_blank" rel="noopener"
+                 data-i18n="travel.timetables"
                 >Station timetables</a
               >
             </div>
@@ -261,64 +269,64 @@
       <section id="faq">
         <div class="wrap">
           <div class="section-head">
-            <span class="kicker">Good to know</span>
-            <h2>Frequently asked questions</h2>
+            <span class="kicker" data-i18n="faq.kicker">Good to know</span>
+            <h2 data-i18n="faq.h">Frequently asked questions</h2>
           </div>
           <div class="faq-grid">
             <div class="faq-item">
-              <h3>What time should I arrive?</h3>
-              <p>
+              <h3 data-i18n="faq.1.q">What time should I arrive?</h3>
+              <p data-i18n="faq.1.a">
                 Please arrive from 3:30pm and be seated by 3:50pm — the ceremony
                 begins promptly at 4:00pm.
               </p>
             </div>
             <div class="faq-item">
-              <h3>Is the venue accessible?</h3>
-              <p>
+              <h3 data-i18n="faq.2.q">Is the venue accessible?</h3>
+              <p data-i18n="faq.2.a">
                 Yes — the barn and orchard are step-free, with accessible
                 parking near the entrance. Let us know if you need anything
                 specific.
               </p>
             </div>
             <div class="faq-item">
-              <h3>Can I bring a plus-one?</h3>
-              <p>
+              <h3 data-i18n="faq.3.q">Can I bring a plus-one?</h3>
+              <p data-i18n="faq.3.a">
                 If a plus-one has been included, it will say so on your
                 invitation and on the RSVP form.
               </p>
             </div>
             <div class="faq-item">
-              <h3>What about dietary requirements?</h3>
-              <p>
+              <h3 data-i18n="faq.4.q">What about dietary requirements?</h3>
+              <p data-i18n="faq.4.a">
                 There's a space for this on the RSVP form — just let us know and
                 we'll make sure the kitchen is aware.
               </p>
             </div>
             <div class="faq-item">
-              <h3>Is there parking on site?</h3>
-              <p>
+              <h3 data-i18n="faq.5.q">Is there parking on site?</h3>
+              <p data-i18n="faq.5.a">
                 Yes, free parking is available in the north field, a short walk
                 from the barn.
               </p>
             </div>
             <div class="faq-item">
-              <h3>What's the weather backup plan?</h3>
-              <p>
+              <h3 data-i18n="faq.6.q">What's the weather backup plan?</h3>
+              <p data-i18n="faq.6.a">
                 If it rains, the ceremony moves into the barn — either way,
                 we'll be married by 4:30pm.
               </p>
             </div>
             <div class="faq-item">
-              <h3>Can I take photos during the ceremony?</h3>
-              <p>
+              <h3 data-i18n="faq.7.q">Can I take photos during the ceremony?</h3>
+              <p data-i18n="faq.7.a">
                 We'd love for you to be present rather than behind a screen —
                 we'll have a photographer, and phones can come out from the
                 reception onward.
               </p>
             </div>
             <div class="faq-item">
-              <h3>By when should I RSVP?</h3>
-              <p>
+              <h3 data-i18n="faq.8.q">By when should I RSVP?</h3>
+              <p data-i18n="faq.8.a">
                 Please reply by 1 April 2027 using the form below so we can
                 finalise catering and seating.
               </p>
@@ -330,34 +338,42 @@
       <section id="gallery" class="band">
         <div class="wrap">
           <div class="section-head">
-            <span class="kicker">A few of our favourites</span>
-            <h2>Gallery</h2>
+            <span class="kicker" data-i18n="gallery.kicker">A few of our favourites</span>
+            <h2 data-i18n="gallery.h">Gallery</h2>
           </div>
           <div class="gallery">
-            <img
-              class="g1"
-              src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1200&auto=format&fit=crop"
-              alt="Couple walking together outdoors"
-              loading="lazy"
-            />
-            <img
-              class="g2"
-              src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200&auto=format&fit=crop"
-              alt="Wedding rings on a wooden surface"
-              loading="lazy"
-            />
-            <img
-              class="g3"
-              src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=900&auto=format&fit=crop"
-              alt="Reception table setting with flowers"
-              loading="lazy"
-            />
-            <img
-              class="g4"
-              src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=500&auto=format&fit=crop"
-              alt="Bouquet of flowers"
-              loading="lazy"
-            />
+            <div class="gallery-frame g1">
+              <img
+                src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1200&auto=format&fit=crop"
+                alt="Couple walking together outdoors"
+                data-i18n-attr="alt:gallery.alt1"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-frame g2">
+              <img
+                src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200&auto=format&fit=crop"
+                alt="Wedding rings on a wooden surface"
+                data-i18n-attr="alt:gallery.alt2"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-frame g3">
+              <img
+                src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=900&auto=format&fit=crop"
+                alt="Reception table setting with flowers"
+                data-i18n-attr="alt:gallery.alt3"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-frame g4">
+              <img
+                src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=500&auto=format&fit=crop"
+                alt="Bouquet of flowers"
+                data-i18n-attr="alt:gallery.alt4"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -366,28 +382,29 @@
         <div class="wrap">
           <div class="rsvp-shell">
             <div class="rsvp-copy">
-              <span class="kicker">Almost there</span>
-              <h2>Let us know if you can make it</h2>
-              <p>
+              <span class="kicker" data-i18n="rsvp.kicker">Almost there</span>
+              <h2 data-i18n="rsvp.h">Let us know if you can make it</h2>
+              <p data-i18n="rsvp.p">
                 We can't wait to celebrate with you. Please reply by the date
                 below so we can finalise catering and seating.
               </p>
-              <p class="rsvp-deadline">RSVP deadline: 1 February 2027</p>
+              <p class="rsvp-deadline" data-i18n="rsvp.deadline">RSVP deadline: 1 February 2027</p>
             </div>
             <form class="form-grid" id="rsvpForm">
               <div class="field full">
-                <label for="fnames">Your names</label>
+                <label for="fnames" data-i18n="form.names">Your names</label>
                 <input
                   type="text"
                   id="fnames"
                   name="names"
                   placeholder="e.g. Jane & John"
+                  data-i18n-attr="placeholder:form.namesPh"
                   required
                 />
               </div>
 
               <fieldset class="field full">
-                <legend>Will you be attending?</legend>
+                <legend data-i18n="form.attending">Will you be attending?</legend>
                 <div class="radio-row">
                   <label>
                     <input
@@ -396,7 +413,7 @@
                       value="Yes!"
                       required
                     />
-                    Yes!
+                    <span data-i18n="form.yes">Yes!</span>
                   </label>
                   <label>
                     <input
@@ -405,33 +422,36 @@
                       value="Sorry can't come"
                       required
                     />
-                    Sorry can't come
+                    <span data-i18n="form.no">Sorry can't come</span>
                   </label>
                 </div>
               </fieldset>
 
               <div id="attendingFields">
                 <div class="field full">
-                  <label for="faccommodation">Accommodation</label>
+                  <label for="faccommodation" data-i18n="form.acc">Accommodation</label>
                   <select id="faccommodation" name="accommodation" required>
-                    <option value="" disabled selected>Please select</option>
-                    <option value="Arranging own lodging nearby">
+                    <option value="" disabled selected data-i18n="form.accSelect">
+                      Please select
+                    </option>
+                    <option value="Arranging own lodging nearby" data-i18n="form.acc1">
                       Arranging own lodging nearby
                     </option>
-                    <option value="I can camp">I can camp</option>
-                    <option value="Going back to London">
+                    <option value="I can camp" data-i18n="form.acc2">I can camp</option>
+                    <option value="Going back to London" data-i18n="form.acc3">
                       Going back to London
                     </option>
                   </select>
                 </div>
 
                 <div class="field full">
-                  <label for="fdiet">Any dietary restrictions</label>
+                  <label for="fdiet" data-i18n="form.diet">Any dietary restrictions</label>
                   <input
                     type="text"
                     id="fdiet"
                     name="dietary"
                     placeholder="Write none if there aren't any"
+                    data-i18n-attr="placeholder:form.dietPh"
                     required
                   />
                 </div>
@@ -439,18 +459,27 @@
 
               <div class="field full">
                 <label for="fmsg"
-                  >Any messages for us
-                  <span class="optional">(optional)</span></label
+                  ><span data-i18n="form.message">Any messages for us</span>
+                  <span class="optional" data-i18n="form.optional"
+                    >(optional)</span
+                  ></label
                 >
                 <textarea
                   id="fmsg"
                   name="message"
                   rows="5"
                   placeholder="Write us a message"
+                  data-i18n-attr="placeholder:form.messagePh"
                 ></textarea>
               </div>
 
-              <button type="submit" class="btn rsvp-submit">Send RSVP</button>
+              <button
+                type="submit"
+                class="btn btn-primary rsvp-submit"
+                data-i18n="form.submit"
+              >
+                Send RSVP
+              </button>
               <p
                 class="form-msg"
                 id="formMsg"
@@ -465,9 +494,12 @@
 
     <footer>
       <div class="monogram">K &amp; F</div>
-      <p>29th May 2027 · Hatfield Regis Grange CM22 7JZ, Essex</p>
+      <p data-i18n="footer.line">
+        29th May 2027 · Hatfield Regis Grange CM22 7JZ, Essex
+      </p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/translations.js?v=5"></script>
+    <script src="js/main.js?v=5"></script>
   </body>
 </html>

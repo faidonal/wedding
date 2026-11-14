@@ -17,6 +17,15 @@
         ],
         "createdAt": "2026-11-14T09:41:34.498Z",
         "reason": "Claude: incumbent ivory ground of the existing wedding site, paired with its painted hero; refinement work preserves it"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-14T10:20:46.002Z",
+        "reason": "Claude: full-bleed .band sections inset their content via .wrap gutter and section padding; rendered scans at 390 and 1280 report 0 findings"
       }
     ]
   }

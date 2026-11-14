@@ -1,36 +1,58 @@
-/* Typography primitives */
-h1,h2,h3{
-  font-family:var(--serif);
-  font-weight:500;
-  margin:0;
-  color:var(--ink);
+/* Typography primitives — every size, weight and leading comes from tokens.css */
+body {
+  font-family: var(--sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  color: var(--color-text);
 }
 
-.text-display{
-  font-family:var(--serif);
-  font-size:var(--text-display);
-  line-height:1.02;
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-heading);
+  margin: 0;
+  color: var(--color-text);
 }
 
-.text-heading{
-  font-family:var(--serif);
-  font-size:var(--text-h2);
-  line-height:1.15;
+h1 {
+  font-size: var(--text-display);
+  line-height: var(--leading-tight);
 }
 
-.text-kicker{
-  font-family:var(--serif);
-  font-style:italic;
-  font-size:var(--text-lg);
+h2 {
+  font-size: var(--text-h2);
 }
 
-.text-body{
-  font-family:var(--sans);
-  font-size:var(--text-body);
-  line-height:1.6;
+h3 {
+  font-size: var(--text-lg);
 }
 
-.text-small{
-  font-family:var(--sans);
-  font-size:var(--text-sm);
+p {
+  margin: 0;
+}
+
+/* The italic serif line that sits above a heading */
+.kicker {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: var(--weight-regular);
+  font-size: var(--text-md);
+  color: var(--color-text-accent);
+  margin-bottom: var(--space-3);
+}
+
+/* Small, quiet supporting text */
+.small {
+  font-size: var(--text-sm);
+}
+
+/* Large screens: scale the whole rem-based system up a step */
+@media (min-width: 1600px) {
+  html {
+    font-size: 106.25%;
+  }
 }

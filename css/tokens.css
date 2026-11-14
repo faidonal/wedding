@@ -1,60 +1,159 @@
-/* Design tokens — edit these to change the site's visual system globally. */
+/* Design tokens — edit these to change the site's visual system globally.
+   Components reference the semantic tokens (second block), never raw hues. */
+
+/* ---------- Palette: toned-down greens with a soft lime accent ---------- */
+:root {
+  --green-950: #1f2a1a;
+  --green-900: #2e3b27;
+  --green-800: #3f4c36;
+  --green-700: #4f5e44;
+  --green-600: #4d6a2c;
+  --green-300: #b9c9a6;
+  --green-200: #e4ecd8;
+  --green-100: #e6eedb;
+  --green-50: #f4f7ee;
+
+  --lime-300: #cfe58a;
+  --lime-400: #bdd96a;
+  --lime-200: #e3f0b8;
+
+  --rose-200: #f2c9c9;
+}
+
+/* ---------- Semantic colour ---------- */
 :root {
   /* Surfaces */
-  --ivory: #faf7f0;
-  --moss-10: #eef1e8;
-  --moss-dark: #3e4833;
-  --line: #d8d2c4;
+  --color-bg: var(--green-50);
+  --color-surface: var(--green-200);
+  --color-surface-dark: var(--green-900);
 
   /* Text on light surfaces */
-  --ink: #2b2e26;
-  --ink-soft: #4b4e42;
-  --ink-muted: #505347;
-  --ink-faint: #64675a;
+  --color-text: var(--green-950);
+  --color-text-soft: var(--green-800);
+  --color-text-muted: var(--green-700);
+  --color-text-accent: var(--green-600);
 
-  /* Text on the dark RSVP panel */
-  --on-dark: #dde3d3;
-  --on-dark-soft: #c9d3be;
-  --on-dark-muted: #b9c4a9;
-  --on-dark-ok: #cfe0b8;
-  --on-dark-err: #f2c9c9;
+  /* Text on dark surfaces and over the hero painting */
+  --color-on-dark: var(--green-50);
+  --color-on-dark-soft: var(--green-100);
+  --color-on-dark-muted: var(--green-300);
+  --color-on-dark-ok: var(--lime-300);
+  --color-on-dark-err: var(--rose-200);
 
-  /* Accents */
-  --moss: #566246;
-  --gold: #b08d57;
-  --gold-light: #c4a271;
-  --gold-ink: #2b2416;
-  --plum: #6b4257;
-  --plum-dark: #552f41;
+  /* Actions */
+  --color-accent: var(--lime-300);
+  --color-accent-hover: var(--lime-400);
+  --color-accent-ink: var(--green-950);
+  --color-link: var(--green-600);
 
-  /* Form fields on the dark panel */
-  --field-bg: rgba(250, 247, 240, 0.08);
-  --field-border: rgba(250, 247, 240, 0.55);
-  --field-placeholder: rgba(221, 227, 211, 0.88);
+  /* Form fields on the dark RSVP panel */
+  --field-bg: rgba(244, 247, 238, 0.08);
+  --field-border: rgba(244, 247, 238, 0.55);
+  --field-placeholder: rgba(230, 238, 219, 0.88);
+
+  /* Over the hero painting */
+  --scrim: 31, 42, 26; /* rgb of --green-950, used with alpha */
+  --ghost-bg: rgba(244, 247, 238, 0.16);
+  --ghost-bg-hover: rgba(244, 247, 238, 0.26);
 
   /* Focus ring: re-pointed per surface in styles.css */
-  --focus: var(--plum);
+  --focus: var(--color-link);
+}
 
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --sans: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+/* ---------- Type ---------- */
+:root {
+  /* Fraunces and Karla have no Greek letters; Literata and Commissioner
+     supply them. Their files only download when Greek text is on screen. */
+  --serif: "Fraunces", "Literata", Georgia, "Times New Roman", serif;
+  --sans: "Karla", "Commissioner", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  /* The monogram and the couple's names always stay in Fraunces */
+  --brand: "Fraunces", Georgia, "Times New Roman", serif;
+
+  /* Scale: every font-size on the site is one of these */
+  --text-sm: 0.875rem; /* 14px — labels, captions, footer, small buttons */
+  --text-base: 1rem; /* 16px — body copy, inputs, buttons */
+  --text-md: 1.125rem; /* 18px — lead copy, kickers, small headings */
+  --text-lg: 1.375rem; /* 22px — card and list headings */
+  --text-h2: clamp(2rem, 1.4rem + 2.4vw, 2.75rem);
+  --text-display: clamp(2.75rem, 1.6rem + 5.6vw, 5.75rem);
+
+  --leading-tight: 1.05;
+  --leading-heading: 1.2;
+  --leading-body: 1.6;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 600;
+
+  --measure: 56ch;
+  --measure-wide: 40rem;
+}
+
+/* Greek: lead with the Greek-capable faces so a line never mixes two fonts */
+:root:lang(el) {
+  --serif: "Literata", "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Commissioner", "Karla", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* ---------- Space ---------- */
+:root {
+  /* Scale: every margin, padding and gap on the site is one of these */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --section-pad: clamp(var(--space-8), 8vw, var(--space-9));
+  --gutter: clamp(var(--space-5), 4vw, var(--space-6));
   --maxw: 1120px;
+  --nav-h: 72px;
+}
 
-  /* Type scale */
-  --text-xs: 0.85rem;
-  --text-sm: 0.92rem;
-  --text-body: 1rem;
-  --text-lg: 1.05rem;
-  --text-h3: 1.25rem;
-  --text-h2: clamp(1.9rem, 3.4vw, 2.6rem);
-  --text-display: clamp(2.6rem, 7vw, 5.6rem);
-
-  /* Spacing */
-  --space-xs: 8px;
-  --space-sm: 16px;
-  --space-md: 32px;
-  --space-lg: 56px;
-  --space-xl: 96px;
-
-  /* Shape */
+/* ---------- Shape and depth ---------- */
+:root {
+  --radius-xs: 4px;
   --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+
+  --tap: 44px;
+
+  --shadow-nav: 0 4px 20px rgba(31, 42, 26, 0.08);
+  --shadow-menu: 0 12px 24px rgba(31, 42, 26, 0.12);
+}
+
+/* ---------- Motion ---------- */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --dur-press: 160ms;
+  --dur-fast: 200ms;
+  --dur-base: 300ms;
+  --dur-entrance: 900ms;
+  --dur-reveal: 600ms;
+  --dur-settle: 1800ms;
+
+  --rise: 16px; /* entrance travel; 0 under reduced motion */
+  --press-scale: 0.97;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --rise: 0px;
+    --press-scale: 1;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --maxw: 1360px;
+  }
 }
