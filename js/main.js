@@ -14,8 +14,10 @@
     },
   };
 
-  // ---- Language: English is in the page, Swedish and Greek in translations.js ----
-  var LANGS = ["en", "sv", "el"];
+  // ---- Language: English is in the page, Swedish, Greek and Spanish in translations.js ----
+  var LANGS = ["en", "sv", "el", "es"];
+  // The html lang tag for each language (Spanish is the Mexican variant)
+  var LANG_TAGS = { en: "en", sv: "sv", el: "el", es: "es-MX" };
   var LANG_KEY = "weddingLang";
   var dict = window.I18N || {};
   var listeners = [];
@@ -44,7 +46,7 @@
 
   function applyLang(next) {
     lang = LANGS.indexOf(next) > -1 ? next : "en";
-    document.documentElement.lang = lang;
+    document.documentElement.lang = LANG_TAGS[lang];
     document.title = t("meta.title");
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
@@ -87,7 +89,7 @@
     var prefs = navigator.languages || [navigator.language || "en"];
     for (var i = 0; i < prefs.length; i++) {
       var code = String(prefs[i]).toLowerCase().slice(0, 2);
-      if (code === "sv" || code === "el") return code;
+      if (code === "sv" || code === "el" || code === "es") return code;
       if (code === "en") return "en";
     }
     return "en";

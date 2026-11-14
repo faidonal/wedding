@@ -1,6 +1,6 @@
 #!/bin/sh
-# Warns when English wording on the site changed but the Swedish and Greek
-# translations were not updated. It never blocks a commit.
+# Warns when English wording on the site changed but the Swedish, Greek and
+# Spanish translations were not updated. It never blocks a commit.
 #
 # Enabled per clone with:  git config core.hooksPath .githooks
 
@@ -27,7 +27,7 @@ fi
 REPORT=$("$NODE" scripts/i18n.mjs check 2>&1)
 if [ $? -ne 0 ]; then
   echo ""
-  echo "⚠  The Swedish and Greek translations are out of date with the English:"
+  echo "⚠  The Swedish, Greek and Spanish translations are out of date with the English:"
   echo ""
   echo "$REPORT" | grep -v 'Run /translate' | sed 's/^/   /'
   echo ""

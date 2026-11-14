@@ -6,7 +6,7 @@
 - `css/typography.css` — reusable typography styles
 - `css/styles.css` — layout and component styling
 - `js/main.js` — mobile navigation, language switch and RSVP behaviour
-- `js/translations.js` — Swedish and Greek text, keyed to `data-i18n` attributes in `index.html`
+- `js/translations.js` — Swedish, Greek and Mexican Spanish text, keyed to `data-i18n` attributes in `index.html`
 - `js/translations.source.json` — the English each translation was written from
 - `scripts/i18n.mjs` — reports English wording the translations haven't caught up with
 - `scripts/layout-check.js` — browser check that every language fits at a given width
@@ -16,7 +16,7 @@ The site remains plain HTML/CSS/JavaScript, so it works directly with GitHub Pag
 
 ## Translations
 
-English lives in `index.html`. After changing English wording, run `/translate` in Claude Code to update the Swedish and Greek, or check by hand with:
+English lives in `index.html`. After changing English wording, run `/translate` in Claude Code to update the Swedish, Greek and Spanish, or check by hand with:
 
 ```
 node scripts/i18n.mjs check

@@ -45,9 +45,9 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Karla:wght@400;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Commissioner:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/tokens.css?v=13" />
-    <link rel="stylesheet" href="css/typography.css?v=13" />
-    <link rel="stylesheet" href="css/styles.css?v=13" />
+    <link rel="stylesheet" href="css/tokens.css?v=15" />
+    <link rel="stylesheet" href="css/typography.css?v=15" />
+    <link rel="stylesheet" href="css/styles.css?v=15" />
   </head>
   <body>
     <nav class="nav" aria-label="Main">
@@ -114,6 +114,15 @@
                 aria-pressed="false"
               >
                 🇬🇷 EL
+              </button>
+              <button
+                type="button"
+                data-lang="es"
+                lang="es-MX"
+                aria-label="Español"
+                aria-pressed="false"
+              >
+                🇲🇽 ES
               </button>
             </div>
           </li>
@@ -222,8 +231,11 @@
         </div>
       </section>
 
-      <section id="details" class="band">
+      <section id="details" class="band" aria-labelledby="details-h">
         <div class="wrap">
+          <h2 id="details-h" class="sr-only" data-i18n="details.h">
+            Everything you need to know
+          </h2>
           <div class="details-grid">
             <div class="detail-card">
               <h3 data-i18n="details.dress.h">Dress Code</h3>
@@ -249,7 +261,7 @@
                 Camping on-site is also available but let us know in your RSVP
                 if you'd like a pitch so we can organise.
               </p>
-              <p data-i18n="details.acc.p2">
+              <p data-i18n="details.acc.p3">
                 We are a 30 minute train ride from central London too, if you
                 wish to stay there. See "How to get there" for more information.
               </p>
@@ -268,7 +280,7 @@
                 invitations are addressed by name and only those listed are
                 invited.
               </p>
-              <p data-i18n="details.acc.p2">
+              <p data-i18n="details.kids.p2">
                 For those with kids, as much as we love them and will miss them,
                 we’re keeping the day adults only.
               </p>
@@ -329,19 +341,19 @@
               </div>
             </li>
             <li class="programme-item">
-              <span class="programme-time" data-i18n="prog.5.time">6:30pm</span>
+              <span class="programme-time" data-i18n="prog.6.time">6:30pm</span>
               <div class="programme-event">
-                <h3 data-i18n="prog.5.h">Ceilidh and dancing</h3>
-                <p data-i18n="prog.5.p">Ceilidh, covers and midnight food.</p>
+                <h3 data-i18n="prog.6.h">Ceilidh and dancing</h3>
+                <p data-i18n="prog.6.p">Ceilidh, covers and midnight food.</p>
               </div>
             </li>
             <li class="programme-item">
-              <span class="programme-time" data-i18n="prog.5.time"
+              <span class="programme-time" data-i18n="prog.7.time"
                 >Midnight</span
               >
               <div class="programme-event">
-                <h3 data-i18n="prog.5.h">Home time</h3>
-                <p data-i18n="prog.5.p">
+                <h3 data-i18n="prog.7.h">Home time</h3>
+                <p data-i18n="prog.7.p">
                   We will all be danced out so home time. Make sure you book
                   your taxis in advance (no Ubers here).
                 </p>
@@ -673,7 +685,7 @@
       </p>
     </footer>
 
-    <script src="js/translations.js?v=13"></script>
-    <script src="js/main.js?v=13"></script>
+    <script src="js/translations.js?v=15"></script>
+    <script src="js/main.js?v=15"></script>
   </body>
 </html>

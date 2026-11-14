@@ -1,14 +1,14 @@
 ---
 name: translate
-description: Bring the wedding site's Swedish and Greek translations up to date after English wording changes in index.html or the "en" block of js/translations.js. Use when the user edits English copy, adds or removes text, asks to sync or update the translations, or runs /translate.
+description: Bring the wedding site's Swedish, Greek and Mexican Spanish translations up to date after English wording changes in index.html or the "en" block of js/translations.js. Use when the user edits English copy, adds or removes text, asks to sync or update the translations, or runs /translate.
 ---
 
-# Update the Swedish and Greek translations
+# Update the Swedish, Greek and Spanish translations
 
 English is the source. It lives in `index.html` (every `[data-i18n]` element's
 text and every `[data-i18n-attr]` attribute) and in the `en` block of
 `js/translations.js` (strings that only exist in code). Swedish (`sv`) and
-Greek (`el`) live in `js/translations.js`. `js/translations.source.json`
+Greek (`el`) and Mexican Spanish (`es`) live in `js/translations.js`. `js/translations.source.json`
 records the English each translation was written from.
 
 ## 1. Find what changed
@@ -38,7 +38,7 @@ the text.
 ## 2. Write the translations
 
 Edit `js/translations.js`, keeping each key in the same position in `sv` and
-`el` as on the page. Translate the meaning and the warmth, not word by word.
+`el` and `es` as on the page. Translate the meaning and the warmth, not word by word.
 These are wedding guests, so keep it friendly and clear.
 
 **Swedish (`sv`)**
@@ -58,7 +58,16 @@ These are wedding guests, so keep it friendly and clear.
 - "RSVP" stays "RSVP" on the nav button (short); in sentences use "φόρμα
   απάντησης" for the RSVP form.
 
-**Both languages**
+**Mexican Spanish (`es`, html lang `es-MX`)**
+- Address guests as "ustedes" (never "vosotros"); use Mexican words:
+  hospedaje, estacionamiento, celular, botanas, auto, aventón.
+- "RSVP" stays "RSVP" on the nav button; in sentences say "confirmar
+  asistencia" / "formulario de confirmación".
+- Times: 12-hour with "p. m.", e.g. "1:30 p. m.". Dates: "29 de mayo de
+  2027"; months and weekdays lower case mid-sentence.
+- Open questions and exclamations with ¿ and ¡. Quotes: “…”.
+
+**All languages**
 - Keep names and places as written: Kirsten, Faidon, Hatfield Regis Grange,
   The Wheatsheaf Inn, Moreton-in-Marsh, London Paddington, postcodes.
 - Never translate an `<option value>` or `<input value>`: those values go to
@@ -82,7 +91,7 @@ returning guests do not get the old text.
 
 ## 4. Check the layout in every language
 
-Longer Swedish or Greek text can break the layout (the nav, buttons, the
+Longer Swedish, Greek or Spanish text can break the layout (the nav, buttons, the
 form). Serve the site and run `scripts/layout-check.js` in the page at
 widths 1440, 1024, 768, 390 and 320:
 
@@ -104,6 +113,6 @@ widths 1440, 1024, 768, 390 and 320:
 
 ## 5. Report
 
-List each updated key as English → Swedish → Greek, say which widths were
+List each updated key as English → Swedish → Greek → Spanish, say which widths were
 checked and what (if anything) you changed to fix the layout, and suggest a
 native speaker glance over the new lines. Do not commit unless the user asks.

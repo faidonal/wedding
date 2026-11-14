@@ -20,7 +20,7 @@
   btn("en").click();
   const english = [...document.querySelectorAll("[data-i18n]")].map((e) => e.textContent.trim());
 
-  for (const l of ["en", "sv", "el"]) {
+  for (const l of ["en", "sv", "el", "es"]) {
     btn(l).click();
     await document.fonts.ready;
     await settle();
@@ -43,7 +43,7 @@
     });
 
     document.querySelectorAll(".btn, .lang-switch button, label, legend, .nav-links a, h1, h2, h3, .value").forEach((e) => {
-      if (e.offsetParent && e.scrollWidth > e.clientWidth + 1) r.push("clipped: " + label(e));
+      if (e.offsetParent && !e.closest(".sr-only") && e.scrollWidth > e.clientWidth + 1) r.push("clipped: " + label(e));
     });
 
     document.querySelectorAll(".btn, .lang-switch button").forEach((e) => {

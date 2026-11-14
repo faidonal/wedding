@@ -4,8 +4,8 @@
 
   English is the source: it lives in index.html ([data-i18n] text and
   [data-i18n-attr] attributes) and in the "en" block of js/translations.js
-  (strings that only exist in code). Swedish and Greek live in
-  js/translations.js. js/translations.source.json records the English each
+  (strings that only exist in code). Swedish, Greek and Mexican
+  Spanish live in js/translations.js. js/translations.source.json records the English each
   translation was written from, so a reworded English sentence shows up here.
 
     node scripts/i18n.mjs check          list what needs translating (exit 1 if anything does)
@@ -21,7 +21,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const HTML = join(ROOT, "index.html");
 const TRANSLATIONS = join(ROOT, "js", "translations.js");
 const SNAPSHOT = join(ROOT, "js", "translations.source.json");
-const LANGS = ["sv", "el"];
+const LANGS = ["sv", "el", "es"];
 
 const ENTITIES = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " };
 const decode = (s) =>
@@ -145,7 +145,7 @@ if (cmd === "snapshot") {
     for (const x of r.removed) console.log(`UNUSED   ${x.key} (${x.langs.join(", ")}) is no longer on the page`);
     for (const [l, keys] of Object.entries(r.missing)) console.log(`MISSING  ${l}: ${keys.join(", ")}`);
     for (const p of r.problems) console.log(`PROBLEM  ${p}`);
-    console.log("\nRun /translate in Claude Code to update Swedish and Greek.");
+    console.log("\nRun /translate in Claude Code to update Swedish, Greek and Spanish.");
   }
   process.exit(pending(r) ? 1 : 0);
 } else {

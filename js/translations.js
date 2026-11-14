@@ -1,6 +1,7 @@
 /* Translations. English lives in index.html itself; only strings that never
    appear in the page (script messages, labels set from code) are listed under
-   "en". Swedish ("sv") and Greek ("el") cover every [data-i18n] key.
+   "en". Swedish ("sv"), Greek ("el") and Mexican Spanish ("es") cover every
+   [data-i18n] key.
    Edit a sentence here and it changes on the site in that language. */
 window.I18N = {
   en: {
@@ -21,66 +22,72 @@ window.I18N = {
     "nav.close": "Stäng menyn",
     "lang.label": "Språk",
 
-    "nav.details": "Detaljer",
-    "nav.programme": "Program",
+    "nav.details": "Översikt",
+    "nav.programme": "Tider",
     "nav.travel": "Hitta hit",
-    "nav.faq": "Frågor & svar",
+    "nav.faq": "Detaljer",
     "nav.rsvp": "OSA",
 
-    "hero.eyebrow": "Vi ska gifta oss",
-    "hero.date": "Lördag 29 maj 2027, Hatfield Regis Grange",
+    "hero.eyebrow": "Hej, vi ska gifta oss",
+    "hero.date": "Lördag 29 maj 2027",
     "hero.rsvp": "OSA senast 1 februari 2027",
     "hero.details": "Se detaljerna",
 
     "basics.dateLabel": "Datum",
     "basics.date": "29 maj 2027",
-    "basics.dateSub": "Lördag, ankomst från kl. 12.00",
+    "basics.dateSub": "Ankomst från kl. 13.00",
     "basics.whereLabel": "Plats",
     "basics.dressLabel": "Klädkod",
     "basics.dress": "Kavaj, lantlig stil",
     "basics.dressSub": "Tänk trädgårdsfest och midsommar, inte smoking",
 
-    "details.kicker": "Det praktiska",
     "details.h": "Allt ni behöver veta",
-    "details.intro":
-      "Lite mer information som hjälper er att planera dagen med oss – mer kommer närmare datumet.",
     "details.dress.h": "Klädkod",
     "details.dress.p1":
-      "Kavaj i lantlig stil. Tänk lätta klänningar, linnekostymer och bekväma skor – på kvällen flyttar festen ut på gräset.",
+      "Kavaj i lantlig stil. Tänk lite finare: sommarklänningar, linnekostymer och – såklart – gärna kilt.",
     "details.dress.p2":
-      "Ta med något varmt, kvällarna i ladan kan bli svala.",
+      "Bra att ta med: ett par bekväma skor att byta till (det blir lekar och ceilidh) och något varmt om kvällarna ser ut att bli kalla. Vi hoppas kunna vara ute så mycket som möjligt, så kolla gärna väderprognosen dagarna innan.",
     "details.acc.h": "Boende",
     "details.acc.p1":
-      "Vi har reserverat ett antal rum på The Wheatsheaf Inn, tio minuter bort med bil, under namnet ”Alex & Jordan”.",
+      "Vi ligger nära Stansted Airport, så det finns gott om hotell och korttidsboenden i området. Boka gärna i god tid, eftersom det är långhelg i Storbritannien.",
     "details.acc.p2":
-      "Det går också att tälta på plats – säg till om ni vill ha en tältplats.",
+      "Det går också att tälta på plats – skriv i OSA-formuläret om ni vill ha en tältplats, så ordnar vi det.",
+    "details.acc.p3":
+      "Vi ligger också 30 minuter med tåg från centrala London, om ni hellre vill bo där. Se ”Så tar ni er hit” för mer information.",
     "details.gifts.h": "Gåvor",
     "details.gifts.p":
-      "Att ni kommer är den finaste gåvan. Vill ni ändå ge något har vi en bröllopsresefond – mer information finns i OSA-formuläret.",
+      "Det låter som en klyscha, men det är sant: att ni kommer är den enda gåva vi behöver, så inga presenter, tack!",
     "details.kids.h": "Barn och respektive",
     "details.kids.p1":
-      "Vi älskar era små, men vår dag är bara för vuxna, med undantag för närmaste familjen.",
+      "Vi firar med nära vänner och familj, så inbjudningarna är personliga och gäller bara dem som står på dem.",
     "details.kids.p2":
-      "Om ni får ta med en respektive står det på inbjudan – berätta bara vem som följer med.",
+      "Vi älskar era barn och kommer att sakna dem, men dagen är bara för vuxna.",
 
-    "prog.kicker": "Själva dagen",
-    "prog.h": "Program",
-    "prog.1.time": "15.30",
-    "prog.1.h": "Gästerna anländer",
-    "prog.1.p": "Var vänliga sitt ner i fruktträdgården senast 15.50.",
-    "prog.2.time": "16.00",
+    "prog.h": "Själva dagen …",
+    "prog.1.time": "13.00",
+    "prog.1.h": "Ankomst",
+    "prog.1.p": "Det blir dryck och musik innan vigseln börjar.",
+    "prog.2.time": "13.30",
     "prog.2.h": "Vigsel",
-    "prog.2.p": "Under den gamla eken i fruktträdgården, om vädret tillåter.",
-    "prog.3.time": "16.30",
-    "prog.3.h": "Mingel och tilltugg",
-    "prog.3.p": "Bubbel på gräsmattan medan vi fotograferas.",
-    "prog.4.time": "20.30",
-    "prog.4.h": "Första dansen och ceilidh",
-    "prog.4.p": "Musik, dans och vickning.",
-    "prog.5.time": "23.30",
-    "prog.5.h": "Hemfärd",
+    "prog.2.p": "Under pilträden vid sjön, OAVSETT väder!!!",
+    "prog.3.time": "14.00",
+    "prog.3.h": "Häng och lekar",
+    "prog.3.p": "Dryck, tilltugg, prat och lekar!",
+    "prog.4.time": "15.00",
+    "prog.4.h": "Mat",
+    "prog.4.p":
+      "Vi sätter oss till bords med smårätter att dela på, vin, dryck och efterrätt. Tal under middagen.",
+    "prog.5.time": "17.30",
+    "prog.5.h": "Lekar och vila",
     "prog.5.p":
-      "Taxi är bokade till 23.30 och midnatt – säg till om ni vill att vi ordnar en åt er.",
+      "Några fler lekar efter maten, och en stund att vila och göra sig redo för ceilidhn.",
+    "prog.6.time": "18.30",
+    "prog.6.h": "Ceilidh och dans",
+    "prog.6.p": "Ceilidh, coverlåtar och vickning.",
+    "prog.7.time": "Midnatt",
+    "prog.7.h": "Dags att åka hem",
+    "prog.7.p":
+      "Då är vi nog alla utdansade, så det är dags att åka hem. Boka taxi i förväg (det finns ingen Uber här).",
 
     "travel.kicker": "Hitta oss",
     "travel.h": "Så tar ni er hit",
@@ -122,11 +129,12 @@ window.I18N = {
     "faq.8.a":
       "Svara senast 1 april 2027 via formuläret nedan, så att vi kan planera mat och placering.",
 
-
     "gallery.alt1": "Kirsten och Faidon skrattar på picknick i parken",
-    "gallery.alt2": "Kirsten och Faidons förlovningsselfie, med ringen i förgrunden",
+    "gallery.alt2":
+      "Kirsten och Faidons förlovningsselfie, med ringen i förgrunden",
     "gallery.alt3": "Kirsten och Faidon dansar och skrattar på en fest",
-    "gallery.alt4": "Kirsten och Faidon kramas utanför ett hus med hängande blommor",
+    "gallery.alt4":
+      "Kirsten och Faidon kramas utanför ett hus med hängande blommor",
     "gallery.alt5": "Kirsten och Faidon uppklädda på en kvällsfest",
 
     "rsvp.kicker": "Nästan framme",
@@ -167,68 +175,74 @@ window.I18N = {
     "nav.close": "Κλείσιμο μενού",
     "lang.label": "Γλώσσα",
 
-    "nav.details": "Λεπτομέρειες",
+    "nav.details": "Σύνοψη",
     "nav.programme": "Πρόγραμμα",
     "nav.travel": "Πρόσβαση",
-    "nav.faq": "Ερωτήσεις",
+    "nav.faq": "Λεπτομέρειες",
     "nav.rsvp": "RSVP",
 
-    "hero.eyebrow": "Παντρευόμαστε",
-    "hero.date": "Σάββατο 29 Μαΐου 2027, Hatfield Regis Grange",
+    "hero.eyebrow": "Γεια σας, παντρευόμαστε",
+    "hero.date": "Σάββατο 29 Μαΐου 2027",
     "hero.rsvp": "Απαντήστε έως 1 Φεβρουαρίου 2027",
     "hero.details": "Δείτε τις λεπτομέρειες",
 
     "basics.dateLabel": "Ημερομηνία",
     "basics.date": "29 Μαΐου 2027",
-    "basics.dateSub": "Σάββατο, άφιξη από τις 12:00",
+    "basics.dateSub": "Άφιξη από τις 13:00",
     "basics.whereLabel": "Τοποθεσία",
     "basics.dressLabel": "Ενδυμασία",
     "basics.dress": "Κομψό εξοχικό ντύσιμο",
     "basics.dressSub":
       "Σκεφτείτε γιορτή σε κήπο ή σουηδικό Midsommar, όχι επίσημο βραδινό ένδυμα",
 
-    "details.kicker": "Τα πρακτικά",
     "details.h": "Όλα όσα χρειάζεται να ξέρετε",
-    "details.intro":
-      "Μερικές ακόμη πληροφορίες για να οργανώσετε τη μέρα σας μαζί μας — περισσότερα θα ακολουθήσουν όσο πλησιάζει η ημερομηνία.",
     "details.dress.h": "Ενδυμασία",
     "details.dress.p1":
-      "Κομψό εξοχικό ντύσιμο. Σκεφτείτε ανάλαφρα φορέματα, λινά κοστούμια και άνετα παπούτσια — το βράδυ η γιορτή συνεχίζεται στο γρασίδι.",
+      "Κομψό εξοχικό ντύσιμο. Κάτι λίγο καλό: καλοκαιρινά φορέματα, λινά κοστούμια και, φυσικά, τα κιλτ είναι ευπρόσδεκτα.",
     "details.dress.p2":
-      "Φέρτε κάτι ζεστό· τα βράδια στον αχυρώνα μπορεί να έχει δροσιά.",
+      "Καλό θα ήταν να φέρετε ένα ζευγάρι άνετα παπούτσια για αλλαγή (θα έχει παιχνίδια και Ceilidh) και κάτι ζεστό αν τα βράδια προβλέπονται κρύα. Ελπίζουμε να είμαστε έξω όσο γίνεται, οπότε ρίξτε μια ματιά στην πρόγνωση του καιρού τις προηγούμενες μέρες.",
     "details.acc.h": "Διαμονή",
     "details.acc.p1":
-      "Έχουμε κρατήσει δωμάτια στο The Wheatsheaf Inn, δέκα λεπτά με το αυτοκίνητο, στο όνομα «Alex & Jordan».",
+      "Είμαστε πολύ κοντά στο αεροδρόμιο Stansted, οπότε στην περιοχή υπάρχουν πολλά ξενοδοχεία και καταλύματα για λίγες μέρες. Σας προτείνουμε να κλείσετε νωρίς, γιατί είναι τριήμερο αργίας στο Ηνωμένο Βασίλειο.",
     "details.acc.p2":
-      "Υπάρχει επίσης δυνατότητα κατασκήνωσης στον χώρο — πείτε μας αν θέλετε θέση για σκηνή.",
+      "Υπάρχει και δυνατότητα κατασκήνωσης στον χώρο· πείτε μας στη φόρμα απάντησης αν θέλετε θέση για σκηνή, για να το οργανώσουμε.",
+    "details.acc.p3":
+      "Είμαστε επίσης 30 λεπτά με το τρένο από το κέντρο του Λονδίνου, αν προτιμάτε να μείνετε εκεί. Δείτε την ενότητα «Πώς θα έρθετε» για περισσότερες πληροφορίες.",
     "details.gifts.h": "Δώρα",
     "details.gifts.p":
-      "Η παρουσία σας είναι το καλύτερο δώρο. Αν θέλετε να μας προσφέρετε κάτι, έχουμε ανοίξει ταμείο για το ταξίδι του μέλιτος — λεπτομέρειες στη φόρμα απάντησης.",
+      "Ξέρουμε ότι ακούγεται κλισέ, αλλά η παρουσία σας είναι το μόνο δώρο που χρειαζόμαστε, οπότε χωρίς δώρα, παρακαλούμε!",
     "details.kids.h": "Παιδιά και συνοδοί",
     "details.kids.p1":
-      "Λατρεύουμε τα παιδάκια σας, αλλά η μέρα μας είναι μόνο για ενήλικες, εκτός από τον στενό οικογενειακό κύκλο.",
+      "Γιορτάζουμε με στενούς φίλους και οικογένεια, γι’ αυτό οι προσκλήσεις είναι ονομαστικές και ισχύουν μόνο για όσους αναφέρονται σε αυτές.",
     "details.kids.p2":
-      "Αν η πρόσκλησή σας περιλαμβάνει συνοδό, θα το αναφέρει — απλώς πείτε μας ποιος θα έρθει μαζί σας.",
+      "Όσο κι αν αγαπάμε τα παιδιά σας και θα μας λείψουν, η μέρα θα είναι μόνο για ενήλικες.",
 
-    "prog.kicker": "Η μεγάλη μέρα",
-    "prog.h": "Πρόγραμμα",
-    "prog.1.time": "15:30",
-    "prog.1.h": "Άφιξη καλεσμένων",
-    "prog.1.p": "Παρακαλούμε να έχετε καθίσει στον οπωρώνα έως τις 15:50.",
-    "prog.2.time": "16:00",
+    "prog.h": "Η μεγάλη μέρα…",
+    "prog.1.time": "13:00",
+    "prog.1.h": "Άφιξη",
+    "prog.1.p": "Θα υπάρχουν ποτά και μουσική πριν ξεκινήσει η τελετή.",
+    "prog.2.time": "13:30",
     "prog.2.h": "Τελετή",
     "prog.2.p":
-      "Κάτω από τη γέρικη βελανιδιά στον οπωρώνα, αν το επιτρέψει ο καιρός.",
-    "prog.3.time": "16:30",
-    "prog.3.h": "Ποτά και ορεκτικά",
-    "prog.3.p": "Αφρώδες κρασί στο γρασίδι όσο βγάζουμε φωτογραφίες.",
-    "prog.4.time": "20:30",
-    "prog.4.h": "Πρώτος χορός και ceilidh",
-    "prog.4.p": "Μουσική, χορός και ένα μεταμεσονύχτιο σνακ.",
-    "prog.5.time": "23:30",
-    "prog.5.h": "Αναχώρηση",
+      "Κάτω από τις ιτιές δίπλα στη λίμνη, ΟΠΟΙΟΝΔΗΠΟΤΕ καιρό κι αν κάνει!!!",
+    "prog.3.time": "14:00",
+    "prog.3.h": "Χαλάρωση και παιχνίδια",
+    "prog.3.p": "Ποτά, σνακ, κουβέντα και παιχνίδια!",
+    "prog.4.time": "15:00",
+    "prog.4.h": "Φαγητό",
+    "prog.4.p":
+      "Θα καθίσουμε στο τραπέζι με πιάτα για μοίρασμα, κρασί, ποτά και επιδόρπιο. Με λόγους στο ενδιάμεσο.",
+    "prog.5.time": "17:30",
+    "prog.5.h": "Παιχνίδια και ξεκούραση",
     "prog.5.p":
-      "Έχουν κλειστεί ταξί για τις 23:30 και τα μεσάνυχτα — πείτε μας αν χρειάζεστε να σας κλείσουμε ένα.",
+      "Μερικά ακόμη παιχνίδια για να χωνέψουμε το φαγητό, και λίγη ξεκούραση πριν από το Ceilidh.",
+    "prog.6.time": "18:30",
+    "prog.6.h": "Ceilidh και χορός",
+    "prog.6.p": "Ceilidh, διασκευές και μεταμεσονύχτιο φαγητό.",
+    "prog.7.time": "Μεσάνυχτα",
+    "prog.7.h": "Ώρα για σπίτι",
+    "prog.7.p":
+      "Θα έχουμε χορέψει μέχρι τελικής πτώσης, οπότε ώρα για το σπίτι. Κλείστε ταξί από πριν (εδώ δεν υπάρχει Uber).",
 
     "travel.kicker": "Βρείτε μας",
     "travel.h": "Πώς θα έρθετε",
@@ -270,11 +284,12 @@ window.I18N = {
     "faq.8.a":
       "Παρακαλούμε απαντήστε έως την 1η Απριλίου 2027 μέσω της παρακάτω φόρμας, για να οριστικοποιήσουμε το φαγητό και τις θέσεις.",
 
-
     "gallery.alt1": "Kirsten και Faidon γελούν σε ένα πικνίκ στο πάρκο",
-    "gallery.alt2": "Η selfie του αρραβώνα των Kirsten και Faidon, με το δαχτυλίδι σε πρώτο πλάνο",
+    "gallery.alt2":
+      "Η selfie του αρραβώνα των Kirsten και Faidon, με το δαχτυλίδι σε πρώτο πλάνο",
     "gallery.alt3": "Kirsten και Faidon χορεύουν και γελούν σε ένα πάρτι",
-    "gallery.alt4": "Kirsten και Faidon αγκαλιάζονται έξω από ένα σπίτι με κρεμαστά λουλούδια",
+    "gallery.alt4":
+      "Kirsten και Faidon αγκαλιάζονται έξω από ένα σπίτι με κρεμαστά λουλούδια",
     "gallery.alt5": "Kirsten και Faidon ντυμένοι επίσημα σε ένα βραδινό πάρτι",
 
     "rsvp.kicker": "Σχεδόν φτάσαμε",
@@ -301,11 +316,164 @@ window.I18N = {
     "form.submit": "Αποστολή",
     "form.sending": "Αποστολή…",
     "form.sent": "Ευχαριστούμε, η απάντησή σας στάλθηκε.",
-    "form.timeout":
-      "Αργεί πολύ. Ελέγξτε τη σύνδεσή σας και στείλτε ξανά.",
+    "form.timeout": "Αργεί πολύ. Ελέγξτε τη σύνδεσή σας και στείλτε ξανά.",
     "form.failed":
       "Η απάντησή σας δεν στάλθηκε. Ελέγξτε τη σύνδεσή σας και στείλτε ξανά.",
 
     "footer.line": "29 Μαΐου 2027 · Hatfield Regis Grange CM22 7JZ, Essex",
+  },
+
+  es: {
+    "meta.title": "Kirsten y Faidon — 29 de mayo de 2027",
+    "nav.open": "Abrir menú",
+    "nav.close": "Cerrar menú",
+    "lang.label": "Idioma",
+
+    "nav.details": "Resumen",
+    "nav.programme": "Horario",
+    "nav.travel": "Cómo llegar",
+    "nav.faq": "Detalles",
+    "nav.rsvp": "RSVP",
+
+    "hero.eyebrow": "Hola, ¡nos vamos a casar!",
+    "hero.date": "Sábado 29 de mayo de 2027",
+    "hero.rsvp": "Confirmen antes del 1 de febrero de 2027",
+    "hero.details": "Ver los detalles",
+
+    "basics.dateLabel": "Fecha",
+    "basics.date": "29 de mayo de 2027",
+    "basics.dateSub": "Llegada a partir de la 1:00 p. m.",
+    "basics.whereLabel": "Lugar",
+    "basics.dressLabel": "Código de vestimenta",
+    "basics.dress": "Formal campestre",
+    "basics.dressSub":
+      "Piensen en una fiesta en el jardín o un Midsommar sueco, no en etiqueta rigurosa",
+
+    "details.h": "Todo lo que necesitan saber",
+    "details.dress.h": "Código de vestimenta",
+    "details.dress.p1":
+      "Formal campestre. Algo un poco elegante: vestidos de verano, trajes de lino y, por supuesto, los kilts son bienvenidos.",
+    "details.dress.p2":
+      "Algunas cosas que quizá quieran traer: un cambio de zapatos cómodos (habrá juegos y un Ceilidh) y algo para abrigarse si las noches pintan frías. Queremos estar al aire libre lo más posible, así que revisen el pronóstico del clima los días anteriores.",
+    "details.acc.h": "Hospedaje",
+    "details.acc.p1":
+      "Estamos muy cerca del aeropuerto de Stansted, así que hay muchos hoteles y rentas por días en la zona. Les recomendamos reservar con tiempo, porque es fin de semana largo en el Reino Unido.",
+    "details.acc.p2":
+      "También se puede acampar en el lugar; avísennos en su confirmación si quieren un espacio para su casa de campaña y lo organizamos.",
+    "details.acc.p3":
+      "También estamos a 30 minutos en tren del centro de Londres, por si prefieren hospedarse allá. Consulten “Cómo llegar” para más información.",
+    "details.gifts.h": "Regalos",
+    "details.gifts.p":
+      "Sí, suena a cliché, pero su presencia es el único regalo que necesitamos, así que ¡por favor, nada de regalos!",
+    "details.kids.h": "Niños y acompañantes",
+    "details.kids.p1":
+      "Vamos a celebrar con amigos cercanos y familia, así que las invitaciones son nominales y solo están invitadas las personas que aparecen en ellas.",
+    "details.kids.p2":
+      "Para quienes tienen hijos: aunque los queremos mucho y los vamos a extrañar, el día será solo para adultos.",
+
+    "prog.h": "El gran día…",
+    "prog.1.time": "1:00 p. m.",
+    "prog.1.h": "Llegada",
+    "prog.1.p": "Habrá bebidas y música antes de que empiece la ceremonia.",
+    "prog.2.time": "1:30 p. m.",
+    "prog.2.h": "Ceremonia",
+    "prog.2.p": "Bajo los sauces junto al lago, ¡llueva, truene o relampaguee!",
+    "prog.3.time": "2:00 p. m.",
+    "prog.3.h": "Convivio y juegos",
+    "prog.3.p": "¡Bebidas, botanas, plática y juegos!",
+    "prog.4.time": "3:00 p. m.",
+    "prog.4.h": "Comida",
+    "prog.4.p":
+      "Nos sentaremos a compartir platillos, vino, bebidas y postre. Habrá discursos durante la comida.",
+    "prog.5.time": "5:30 p. m.",
+    "prog.5.h": "Juegos y descanso",
+    "prog.5.p":
+      "Unos juegos más para bajar la comida y un rato para descansar y alistarse para el Ceilidh.",
+    "prog.6.time": "6:30 p. m.",
+    "prog.6.h": "Ceilidh y baile",
+    "prog.6.p": "Ceilidh, covers y comida de medianoche.",
+    "prog.7.time": "Medianoche",
+    "prog.7.h": "Hora de irse a casa",
+    "prog.7.p":
+      "Para entonces ya no vamos a poder ni bailar, así que es hora de irse a casa. Reserven su taxi con anticipación (aquí no hay Uber).",
+
+    "travel.kicker": "Encuéntrennos",
+    "travel.h": "Cómo llegar",
+    "travel.car.h": "En auto",
+    "travel.car.p2":
+      "Hay estacionamiento gratuito en el campo norte; sigan los letreros desde la entrada principal. Por favor organicen un conductor designado o un taxi para la noche, porque los caminos rurales no tienen alumbrado.",
+    "travel.maps": "Abrir en Google Maps",
+    "travel.train.h": "En tren",
+    "travel.train.p1":
+      "La estación más cercana es Moreton-in-Marsh (a 20 minutos en taxi), con trenes frecuentes desde London Paddington.",
+    "travel.train.p2":
+      "Indíquennos su hora de llegada en el formulario de confirmación y haremos lo posible por coordinar aventones desde la estación.",
+    "travel.timetables": "Horarios de trenes",
+
+    "faq.kicker": "Para que lo sepan",
+    "faq.h": "Preguntas frecuentes",
+    "faq.1.q": "¿A qué hora debo llegar?",
+    "faq.1.a":
+      "Lleguen a partir de las 3:30 p. m. y tomen asiento a más tardar a las 3:50 p. m.; la ceremonia empieza puntualmente a las 4:00 p. m.",
+    "faq.2.q": "¿El lugar es accesible?",
+    "faq.2.a":
+      "Sí, el granero y el huerto no tienen escalones, y hay estacionamiento accesible cerca de la entrada. Avísennos si necesitan algo en particular.",
+    "faq.3.q": "¿Puedo llevar acompañante?",
+    "faq.3.a":
+      "Si se incluye un acompañante, lo dirán su invitación y el formulario de confirmación.",
+    "faq.4.q": "¿Y si tengo restricciones alimentarias?",
+    "faq.4.a":
+      "Hay un espacio para eso en el formulario de confirmación; solo avísennos y nos aseguraremos de que la cocina lo sepa.",
+    "faq.5.q": "¿Hay estacionamiento en el lugar?",
+    "faq.5.a":
+      "Sí, hay estacionamiento gratuito en el campo norte, a unos pasos del granero.",
+    "faq.6.q": "¿Qué pasa si llueve?",
+    "faq.6.a":
+      "Si llueve, la ceremonia se pasa al granero; de cualquier forma, a las 4:30 p. m. ya estaremos casados.",
+    "faq.7.q": "¿Puedo tomar fotos durante la ceremonia?",
+    "faq.7.a":
+      "Nos encantaría que estén presentes y no detrás de una pantalla: tendremos fotógrafo, y los celulares pueden salir a partir de la recepción.",
+    "faq.8.q": "¿Cuándo es la fecha límite para confirmar?",
+    "faq.8.a":
+      "Por favor confirmen antes del 1 de abril de 2027 con el formulario de abajo, para que podamos cerrar el menú y la distribución de mesas.",
+
+    "gallery.alt1": "Kirsten y Faidon riéndose en un pícnic en el parque",
+    "gallery.alt2":
+      "Selfi de compromiso de Kirsten y Faidon, con el anillo en primer plano",
+    "gallery.alt3": "Kirsten y Faidon bailando y riéndose en una fiesta",
+    "gallery.alt4":
+      "Kirsten y Faidon abrazados frente a una casa con flores colgantes",
+    "gallery.alt5": "Kirsten y Faidon arreglados para una fiesta de noche",
+
+    "rsvp.kicker": "Ya casi",
+    "rsvp.h": "Cuéntennos si pueden venir",
+    "rsvp.p":
+      "Nos morimos de ganas de celebrar con ustedes. Por favor respondan antes de la fecha de abajo para que podamos cerrar el menú y la distribución de mesas.",
+    "rsvp.deadline": "Fecha límite para confirmar: 1 de febrero de 2027",
+
+    "form.names": "Sus nombres",
+    "form.namesPh": "p. ej., Ana y Luis",
+    "form.attending": "¿Asistirán?",
+    "form.yes": "¡Sí!",
+    "form.no": "Lo sentimos, no podremos ir",
+    "form.acc": "Hospedaje",
+    "form.accSelect": "Elijan una opción",
+    "form.acc1": "Nos hospedaremos cerca por nuestra cuenta",
+    "form.acc2": "Puedo acampar",
+    "form.acc3": "Regreso a Londres",
+    "form.diet": "Restricciones alimentarias",
+    "form.dietPh": "Escriban “ninguna” si no tienen",
+    "form.message": "¿Algún mensaje para nosotros?",
+    "form.optional": "(opcional)",
+    "form.messagePh": "Escríbannos un mensaje",
+    "form.submit": "Enviar confirmación",
+    "form.sending": "Enviando…",
+    "form.sent": "Gracias, su confirmación se envió.",
+    "form.timeout":
+      "Esto está tardando demasiado. Revisen su conexión y vuelvan a enviarla.",
+    "form.failed":
+      "Su confirmación no se envió. Revisen su conexión y vuelvan a enviarla.",
+
+    "footer.line": "29 de mayo de 2027 · Hatfield Regis Grange CM22 7JZ, Essex",
   },
 };
