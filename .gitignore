@@ -2,3 +2,10 @@
 .claude/launch.json
 # macOS Finder files
 .DS_Store
+# Original camera files (full size, may contain location data).
+# The site uses the resized copies in images/gallery/.
+images/DSCF7174.JPG
+images/E&C_wedding_day_7242.JPEG
+images/IMG_2589.JPG
+images/IMG_7711.jpg
+images/IMG_8450.jpg

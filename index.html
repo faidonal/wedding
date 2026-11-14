@@ -45,9 +45,9 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Karla:wght@400;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Commissioner:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/tokens.css?v=6" />
-    <link rel="stylesheet" href="css/typography.css?v=6" />
-    <link rel="stylesheet" href="css/styles.css?v=6" />
+    <link rel="stylesheet" href="css/tokens.css?v=13" />
+    <link rel="stylesheet" href="css/typography.css?v=13" />
+    <link rel="stylesheet" href="css/styles.css?v=13" />
   </head>
   <body>
     <nav class="nav" aria-label="Main">
@@ -79,11 +79,6 @@
             >
           </li>
           <li><a class="link-draw" href="#faq" data-i18n="nav.faq">FAQ</a></li>
-          <li>
-            <a class="link-draw" href="#gallery" data-i18n="nav.gallery"
-              >Gallery</a
-            >
-          </li>
           <li class="lang-item">
             <div
               class="lang-switch"
@@ -157,6 +152,14 @@
         <div class="wrap">
           <div class="basics">
             <div class="basic-item">
+              <span class="basic-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 2v4" />
+                  <path d="M16 2v4" />
+                  <rect width="18" height="18" x="3" y="4" rx="2" />
+                  <path d="M3 10h18" />
+                </svg>
+              </span>
               <span class="label" data-i18n="basics.dateLabel">Date</span>
               <div class="value" data-i18n="basics.date">29th May 2027</div>
               <div class="sub" data-i18n="basics.dateSub">
@@ -164,11 +167,22 @@
               </div>
             </div>
             <div class="basic-item">
+              <span class="basic-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
               <span class="label" data-i18n="basics.whereLabel">Where</span>
               <div class="value">Hatfield Regis Grange Farm</div>
               <div class="sub">CM22 7JQ</div>
             </div>
             <div class="basic-item">
+              <span class="basic-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
+                </svg>
+              </span>
               <span class="label" data-i18n="basics.dressLabel"
                 >Dress Code</span
               >
@@ -419,47 +433,64 @@
         </div>
       </section>
 
-      <section id="gallery" class="band">
-        <div class="wrap">
-          <div class="section-head">
-            <span class="kicker" data-i18n="gallery.kicker"
-              >A few of our favourites</span
-            >
-            <h2 data-i18n="gallery.h">Gallery</h2>
-          </div>
-          <div class="gallery">
-            <div class="gallery-frame g1">
+      <section id="gallery" class="band gallery">
+        <div class="gallery-sticky">
+          <div class="stack">
+            <figure class="stack-card" style="--ratio: 1.5000">
               <img
-                src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1200&auto=format&fit=crop"
-                alt="Couple walking together outdoors"
+                src="images/gallery/01-picnic.webp"
+                alt="Kirsten and Faidon laughing at a picnic in the park"
                 data-i18n-attr="alt:gallery.alt1"
+                width="1800"
+                height="1200"
                 loading="lazy"
+                decoding="async"
               />
-            </div>
-            <div class="gallery-frame g2">
+            </figure>
+            <figure class="stack-card" style="--ratio: 0.7500">
               <img
-                src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200&auto=format&fit=crop"
-                alt="Wedding rings on a wooden surface"
+                src="images/gallery/02-ring.webp"
+                alt="Kirsten and Faidon’s engagement selfie, with the ring in the foreground"
                 data-i18n-attr="alt:gallery.alt2"
+                width="1350"
+                height="1800"
                 loading="lazy"
+                decoding="async"
               />
-            </div>
-            <div class="gallery-frame g3">
+            </figure>
+            <figure class="stack-card" style="--ratio: 1.5000">
               <img
-                src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=900&auto=format&fit=crop"
-                alt="Reception table setting with flowers"
+                src="images/gallery/03-dancing.webp"
+                alt="Kirsten and Faidon dancing and laughing at a party"
                 data-i18n-attr="alt:gallery.alt3"
+                width="1800"
+                height="1200"
                 loading="lazy"
+                decoding="async"
               />
-            </div>
-            <div class="gallery-frame g4">
+            </figure>
+            <figure class="stack-card" style="--ratio: 0.4617">
               <img
-                src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=500&auto=format&fit=crop"
-                alt="Bouquet of flowers"
+                src="images/gallery/04-cottage.webp"
+                alt="Kirsten and Faidon hugging outside a cottage with hanging flowers"
                 data-i18n-attr="alt:gallery.alt4"
+                width="831"
+                height="1800"
                 loading="lazy"
+                decoding="async"
               />
-            </div>
+            </figure>
+            <figure class="stack-card" style="--ratio: 0.6628">
+              <img
+                src="images/gallery/05-evening.webp"
+                alt="Kirsten and Faidon dressed up at an evening party"
+                data-i18n-attr="alt:gallery.alt5"
+                width="1193"
+                height="1800"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
           </div>
         </div>
       </section>
@@ -603,7 +634,7 @@
       </p>
     </footer>
 
-    <script src="js/translations.js?v=5"></script>
-    <script src="js/main.js?v=5"></script>
+    <script src="js/translations.js?v=13"></script>
+    <script src="js/main.js?v=13"></script>
   </body>
 </html>

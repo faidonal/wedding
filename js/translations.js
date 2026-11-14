@@ -25,7 +25,6 @@ window.I18N = {
     "nav.programme": "Program",
     "nav.travel": "Hitta hit",
     "nav.faq": "Frågor & svar",
-    "nav.gallery": "Galleri",
     "nav.rsvp": "OSA",
 
     "hero.eyebrow": "Vi ska gifta oss",
@@ -123,12 +122,12 @@ window.I18N = {
     "faq.8.a":
       "Svara senast 1 april 2027 via formuläret nedan, så att vi kan planera mat och placering.",
 
-    "gallery.kicker": "Några favoriter",
-    "gallery.h": "Galleri",
-    "gallery.alt1": "Ett par som promenerar tillsammans utomhus",
-    "gallery.alt2": "Vigselringar på en träyta",
-    "gallery.alt3": "Dukat bord med blommor",
-    "gallery.alt4": "Blombukett",
+
+    "gallery.alt1": "Kirsten och Faidon skrattar på picknick i parken",
+    "gallery.alt2": "Kirsten och Faidons förlovningsselfie, med ringen i förgrunden",
+    "gallery.alt3": "Kirsten och Faidon dansar och skrattar på en fest",
+    "gallery.alt4": "Kirsten och Faidon kramas utanför ett hus med hängande blommor",
+    "gallery.alt5": "Kirsten och Faidon uppklädda på en kvällsfest",
 
     "rsvp.kicker": "Nästan framme",
     "rsvp.h": "Berätta om ni kan komma",
@@ -172,7 +171,6 @@ window.I18N = {
     "nav.programme": "Πρόγραμμα",
     "nav.travel": "Πρόσβαση",
     "nav.faq": "Ερωτήσεις",
-    "nav.gallery": "Φωτογραφίες",
     "nav.rsvp": "RSVP",
 
     "hero.eyebrow": "Παντρευόμαστε",
@@ -272,12 +270,12 @@ window.I18N = {
     "faq.8.a":
       "Παρακαλούμε απαντήστε έως την 1η Απριλίου 2027 μέσω της παρακάτω φόρμας, για να οριστικοποιήσουμε το φαγητό και τις θέσεις.",
 
-    "gallery.kicker": "Μερικές αγαπημένες μας",
-    "gallery.h": "Φωτογραφίες",
-    "gallery.alt1": "Ζευγάρι που περπατά μαζί στην ύπαιθρο",
-    "gallery.alt2": "Βέρες πάνω σε ξύλινη επιφάνεια",
-    "gallery.alt3": "Στρωμένο τραπέζι δεξίωσης με λουλούδια",
-    "gallery.alt4": "Μπουκέτο λουλουδιών",
+
+    "gallery.alt1": "Kirsten και Faidon γελούν σε ένα πικνίκ στο πάρκο",
+    "gallery.alt2": "Η selfie του αρραβώνα των Kirsten και Faidon, με το δαχτυλίδι σε πρώτο πλάνο",
+    "gallery.alt3": "Kirsten και Faidon χορεύουν και γελούν σε ένα πάρτι",
+    "gallery.alt4": "Kirsten και Faidon αγκαλιάζονται έξω από ένα σπίτι με κρεμαστά λουλούδια",
+    "gallery.alt5": "Kirsten και Faidon ντυμένοι επίσημα σε ένα βραδινό πάρτι",
 
     "rsvp.kicker": "Σχεδόν φτάσαμε",
     "rsvp.h": "Πείτε μας αν θα έρθετε",

@@ -127,6 +127,7 @@
 
   --shadow-nav: 0 4px 20px rgba(31, 42, 26, 0.08);
   --shadow-menu: 0 12px 24px rgba(31, 42, 26, 0.12);
+  --shadow-card: 0 18px 40px rgba(31, 42, 26, 0.18);
 }
 
 /* ---------- Motion ---------- */

@@ -296,6 +296,215 @@
       });
   });
 
+  // ---- Gallery: a pile of prints, dealt one by one as you scroll ----
+  // While the section is pinned, scrolling moves through "stages": at stage k,
+  // photo k is on top. Between stages the top photo is lifted off to the left
+  // in one arc and slid in at the back of the pile, while the photos beneath
+  // follow it up one after another. Each photo rests before the next deal.
+  // The drawn position eases toward the scroll position every frame, so a
+  // mouse wheel's notches glide instead of jumping.
+  var gallery = document.getElementById("gallery");
+  var stack = gallery && gallery.querySelector(".stack");
+  if (stack) {
+    var cards = [].slice.call(stack.querySelectorAll(".stack-card"));
+    var images = cards.map(function (card) { return card.querySelector("img"); });
+    var count = cards.length;
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    var SHRINK = 0.03; // each photo underneath is 3% smaller
+    var SHADE = 0.14; // and this much darker
+    var REST = 0.18; // share of each deal's scroll spent resting on a photo
+    var TILT = -5; // degrees the dealt photo turns at the height of its arc
+    var LIFT = 0.06; // how far it rises, as a share of its height
+    var FOLLOW = 0.22; // how late each photo beneath starts moving up
+    var DRIFT = 0.06; // the picture inside drifts against the photo's motion
+    var SMOOTHING = 110; // ms for the drawn position to close most of the gap
+
+    var clamp = function (v) { return Math.min(Math.max(v, 0), 1); };
+    var lerp = function (a, b, t) { return a + (b - a) * t; };
+    var easeInOut = function (t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    };
+    var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
+
+    // Scroll progress 0–1 → stage 0…count-1, holding still at each photo
+    var stageAt = function (progress) {
+      var deals = count - 1;
+      var stage = 0;
+      for (var k = 0; k < deals; k++) {
+        var local = clamp((progress - k / deals) * deals);
+        stage += easeInOut(clamp((local - REST) / (1 - 2 * REST)));
+      }
+      return stage;
+    };
+
+    // Resting tilt for each photo while it lies in the pile, like loose prints
+    var REST_TILT = [-1.4, 1.1, -0.7, 1.5, -1.0];
+    var restTilt = function (i) { return REST_TILT[i % REST_TILT.length]; };
+
+    // Layout measured once (and on resize), not every frame
+    var layout = { widths: [], frameH: 0, peek: 0 };
+    var readLayout = function () {
+      var peekShare = parseFloat(getComputedStyle(gallery).getPropertyValue("--peek")) || 0.045;
+      layout.frameH = stack.offsetHeight;
+      layout.peek = peekShare * layout.frameH;
+      layout.widths = cards.map(function (card) { return card.offsetWidth; });
+    };
+
+    // Where the scroll position says we should be: the stage, and how far the
+    // pile has fanned out (0 while the section is still below the screen)
+    var target = { stage: 0, fan: 0 };
+    var drawn = { stage: 0, fan: 0 };
+    var measure = function () {
+      var rect = gallery.getBoundingClientRect();
+      var distance = gallery.offsetHeight - window.innerHeight;
+      target.stage = stageAt(distance > 0 ? clamp(-rect.top / distance) : 0);
+      target.fan = easeOut(clamp(1 - rect.top / window.innerHeight));
+      return rect;
+    };
+
+    // Resting place of photo i, `depth` places down a pile topped by photo
+    // `top`, measured from the centre. It sits centred under the top photo,
+    // shifted right by `depth` peeks, so a wider print sticks out evenly on
+    // both sides. A narrower one would hide completely, so it lines up with
+    // the top photo's right edge instead and its peek still shows.
+    var place = function (i, depth, top) {
+      var scale = 1 - depth * SHRINK;
+      var centred = depth * layout.peek;
+      var rightAligned = layout.widths[top] / 2 + depth * layout.peek - (layout.widths[i] * scale) / 2;
+      var x = Math.max(centred, rightAligned);
+      return {
+        x: x * drawn.fan,
+        scale: lerp(1, scale, drawn.fan),
+        tilt: depth > 0 ? restTilt(i) * drawn.fan : 0,
+      };
+    };
+    var leftEdge = function (i, at) { return at.x - (layout.widths[i] * at.scale) / 2; };
+
+    var draw = function () {
+      var stage = drawn.stage;
+      var k = Math.min(Math.floor(stage), count - 2);
+      var t = stage - k;
+      var next = (k + 1) % count;
+      var dealt = k % count;
+
+      // Where every other photo starts and ends this deal, and the leftmost
+      // edge any of them reaches, so the dealt photo can clear them all
+      var moves = [];
+      var leftmost = Infinity;
+      cards.forEach(function (card, i) {
+        if (i === dealt) return;
+        var depth = (i - k + count) % count;
+        var a = place(i, depth, dealt);
+        var b = place(i, depth - 1, next);
+        moves[i] = { depth: depth, a: a, b: b };
+        leftmost = Math.min(leftmost, leftEdge(i, a), leftEdge(i, b));
+      });
+
+      cards.forEach(function (card, i) {
+        var x, y = 0, scale, tilt, z, shade, drift = 0;
+
+        if (i === dealt) {
+          // One continuous arc: out to the left, up a little, then under
+          var p = easeInOut(t);
+          var arc = Math.sin(Math.PI * t);
+          var from = place(i, 0, dealt);
+          var to = place(i, count - 1, next);
+          var mid = lerp(from.x, to.x, 0.5);
+          var away = Math.max(0, mid + layout.widths[i] * 0.51 - leftmost + 16);
+          x = lerp(from.x, to.x, p) - away * arc;
+          y = -LIFT * layout.frameH * arc;
+          scale = lerp(from.scale, to.scale, p) + 0.02 * arc;
+          tilt = TILT * arc + lerp(from.tilt, to.tilt, p);
+          z = t < 0.5 ? 30 : 0;
+          shade = SHADE * (count - 1) * clamp((t - 0.5) * 2) * drawn.fan;
+          drift = DRIFT * layout.widths[i] * Math.cos(Math.PI * t) * arc; // trails the motion
+        } else {
+          // Move up one place, each photo starting a little after the one above
+          var m = moves[i];
+          var delay = FOLLOW * m.depth / (count - 1);
+          var u = easeInOut(clamp((t - delay) / (1 - delay)));
+          x = lerp(m.a.x, m.b.x, u);
+          scale = lerp(m.a.scale, m.b.scale, u);
+          tilt = lerp(m.a.tilt, m.b.tilt, u);
+          z = 20 - m.depth;
+          shade = SHADE * lerp(m.depth, m.depth - 1, u) * drawn.fan;
+        }
+
+        card.style.transform =
+          "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0) rotate(" +
+          tilt.toFixed(2) + "deg) scale(" + scale.toFixed(4) + ")";
+        card.style.zIndex = z;
+        card.style.setProperty("--shade", shade.toFixed(3));
+        images[i].style.transform =
+          "translate3d(" + drift.toFixed(1) + "px,0,0) scale(1.08)";
+      });
+    };
+
+    var running = false;
+    var last = 0;
+    var tick = function (now) {
+      var dt = last ? Math.min(now - last, 64) : 16;
+      last = now;
+      var rect = measure();
+      var ease = 1 - Math.exp(-dt / SMOOTHING);
+      drawn.stage += (target.stage - drawn.stage) * ease;
+      drawn.fan += (target.fan - drawn.fan) * ease;
+      draw();
+      var settled =
+        Math.abs(target.stage - drawn.stage) < 0.0005 &&
+        Math.abs(target.fan - drawn.fan) < 0.0005;
+      var offscreen = rect.bottom < 0 || rect.top > window.innerHeight;
+      if (settled || offscreen) {
+        drawn.stage = target.stage;
+        drawn.fan = target.fan;
+        draw();
+        running = false;
+        last = 0;
+      } else {
+        requestAnimationFrame(tick);
+      }
+    };
+    var wake = function () {
+      if (running || !gallery.classList.contains("is-pinned")) return;
+      running = true;
+      requestAnimationFrame(tick);
+    };
+
+    // Phones and reduced motion get the photos as a still, stacked column:
+    // no pinning, no movement
+    var phone = window.matchMedia("(max-width: 720px)");
+    var setGalleryMode = function () {
+      var pinned = !reduceMotion.matches && !phone.matches;
+      gallery.classList.toggle("is-pinned", pinned);
+      cards.forEach(function (card, i) {
+        card.style.transform = "";
+        card.style.zIndex = "";
+        card.style.removeProperty("--shade");
+        images[i].style.transform = "";
+      });
+      if (pinned) {
+        gallery.style.setProperty("--deals", count - 1);
+        readLayout();
+        measure();
+        drawn.stage = target.stage; // start where the page already is
+        drawn.fan = target.fan;
+        draw();
+      }
+    };
+
+    window.addEventListener("scroll", wake, { passive: true });
+    window.addEventListener("resize", function () {
+      if (gallery.classList.contains("is-pinned")) { readLayout(); measure(); draw(); }
+      wake();
+    });
+    if (reduceMotion.addEventListener) {
+      reduceMotion.addEventListener("change", setGalleryMode);
+      phone.addEventListener("change", setGalleryMode);
+    }
+    setGalleryMode();
+  }
+
   // Apply the language last, once every listener above is registered
   applyLang(initialLang());
 })();
