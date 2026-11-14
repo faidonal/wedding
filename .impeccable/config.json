@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "fraunces",
+        "createdAt": "2026-11-14T09:41:34.461Z",
+        "reason": "Claude: incumbent brand typeface of the existing wedding site; refinement work preserves it"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-14T09:41:34.498Z",
+        "reason": "Claude: incumbent ivory ground of the existing wedding site, paired with its painted hero; refinement work preserves it"
+      }
+    ]
+  }
+}
