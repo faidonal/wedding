@@ -1,0 +1,37 @@
+#!/bin/sh
+# Warns when English wording on the site changed but the Swedish and Greek
+# translations were not updated. It never blocks a commit.
+#
+# Enabled per clone with:  git config core.hooksPath .githooks
+
+# Only check when the commit touches the page text or the translations
+if ! git diff --cached --name-only | grep -qE '^(index\.html|js/translations\.js)$'; then
+  exit 0
+fi
+
+# Find Node. Apps like VS Code often start git without the shell's PATH,
+# so also try nvm and the usual install locations.
+NODE=$(command -v node 2>/dev/null)
+if [ -z "$NODE" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
+  . "$HOME/.nvm/nvm.sh" >/dev/null 2>&1
+  NODE=$(command -v node 2>/dev/null)
+fi
+for candidate in /opt/homebrew/bin/node /usr/local/bin/node; do
+  [ -z "$NODE" ] && [ -x "$candidate" ] && NODE=$candidate
+done
+if [ -z "$NODE" ]; then
+  echo "translations: Node not found, skipped the check (run: node scripts/i18n.mjs check)"
+  exit 0
+fi
+
+REPORT=$("$NODE" scripts/i18n.mjs check 2>&1)
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "⚠  The Swedish and Greek translations are out of date with the English:"
+  echo ""
+  echo "$REPORT" | grep -v 'Run /translate' | sed 's/^/   /'
+  echo ""
+  echo "   Committing anyway. Run /translate in Claude Code to update them."
+  echo ""
+fi
+exit 0

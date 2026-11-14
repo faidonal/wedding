@@ -1,0 +1,4 @@
+# Preview server config (points at a per-session folder)
+.claude/launch.json
+# macOS Finder files
+.DS_Store
