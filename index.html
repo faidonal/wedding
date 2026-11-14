@@ -45,9 +45,9 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Karla:wght@400;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Commissioner:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/tokens.css?v=17" />
-    <link rel="stylesheet" href="css/typography.css?v=17" />
-    <link rel="stylesheet" href="css/styles.css?v=17" />
+    <link rel="stylesheet" href="css/tokens.css?v=19" />
+    <link rel="stylesheet" href="css/typography.css?v=19" />
+    <link rel="stylesheet" href="css/styles.css?v=19" />
   </head>
   <body>
     <nav class="nav" aria-label="Main">
@@ -484,6 +484,37 @@
         </div>
       </section>
 
+      <section id="hounds" class="band">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="kicker" data-i18n="hounds.kicker">Hounds of Love</span>
+            <h2 data-i18n="hounds.h">Please watch before coming</h2>
+            <p data-i18n="hounds.p">
+              At the ceremony we will ask you to join us in song, of sorts,
+              please watch these two videos to familiarise yourself:
+            </p>
+          </div>
+          <div class="video-grid">
+            <!-- Placeholder for the private video: swap this div for an
+                 iframe like the one below, with the video's ID in the src -->
+            <div class="video-frame video-placeholder">
+              <p data-i18n="hounds.soon">Video coming soon</p>
+            </div>
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/VerK4zwMRQw"
+                title="Hounds of Love: second video to watch"
+                data-i18n-attr="title:hounds.video2"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="gallery" class="band gallery">
         <div class="gallery-sticky">
           <div class="stack">
@@ -685,7 +716,7 @@
       </p>
     </footer>
 
-    <script src="js/translations.js?v=17"></script>
-    <script src="js/main.js?v=17"></script>
+    <script src="js/translations.js?v=19"></script>
+    <script src="js/main.js?v=19"></script>
   </body>
 </html>

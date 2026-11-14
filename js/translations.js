@@ -129,6 +129,13 @@ window.I18N = {
     "faq.8.a":
       "Svara senast 1 april 2027 via formuläret nedan, så att vi kan planera mat och placering.",
 
+    "hounds.kicker": "Hounds of Love",
+    "hounds.h": "Titta innan ni kommer",
+    "hounds.p":
+      "Under vigseln kommer vi att be er sjunga med oss – på sätt och vis – så titta gärna på de här två videorna och bekanta er med dem:",
+    "hounds.soon": "Videon kommer snart",
+    "hounds.video2": "Hounds of Love: andra videon att titta på",
+
     "gallery.alt1": "Kirsten och Faidon skrattar på picknick i parken",
     "gallery.alt2":
       "Kirsten och Faidons förlovningsselfie, med ringen i förgrunden",
@@ -284,6 +291,13 @@ window.I18N = {
     "faq.8.a":
       "Παρακαλούμε απαντήστε έως την 1η Απριλίου 2027 μέσω της παρακάτω φόρμας, για να οριστικοποιήσουμε το φαγητό και τις θέσεις.",
 
+    "hounds.kicker": "Hounds of Love",
+    "hounds.h": "Δείτε τα πριν έρθετε",
+    "hounds.p":
+      "Στην τελετή θα σας ζητήσουμε να τραγουδήσετε μαζί μας, κατά κάποιον τρόπο, γι’ αυτό δείτε αυτά τα δύο βίντεο για να εξοικειωθείτε:",
+    "hounds.soon": "Το βίντεο έρχεται σύντομα",
+    "hounds.video2": "Hounds of Love: δεύτερο βίντεο για να δείτε",
+
     "gallery.alt1": "Kirsten και Faidon γελούν σε ένα πικνίκ στο πάρκο",
     "gallery.alt2":
       "Η selfie του αρραβώνα των Kirsten και Faidon, με το δαχτυλίδι σε πρώτο πλάνο",
@@ -436,6 +450,13 @@ window.I18N = {
     "faq.8.q": "¿Cuándo es la fecha límite para confirmar?",
     "faq.8.a":
       "Por favor confirmen antes del 1 de abril de 2027 con el formulario de abajo, para que podamos cerrar el menú y la distribución de mesas.",
+
+    "hounds.kicker": "Hounds of Love",
+    "hounds.h": "Por favor, véanlos antes de venir",
+    "hounds.p":
+      "En la ceremonia les pediremos que nos acompañen a cantar, por así decirlo; por favor vean estos dos videos para familiarizarse:",
+    "hounds.soon": "El video estará disponible pronto",
+    "hounds.video2": "Hounds of Love: segundo video para ver",
 
     "gallery.alt1": "Kirsten y Faidon riéndose en un pícnic en el parque",
     "gallery.alt2":
