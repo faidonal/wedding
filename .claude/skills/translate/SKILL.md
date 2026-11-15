@@ -69,7 +69,7 @@ These are wedding guests, so keep it friendly and clear.
 
 **All languages**
 - Keep names and places as written: Kirsten, Faidon, Hatfield Regis Grange,
-  The Wheatsheaf Inn, Moreton-in-Marsh, London Paddington, postcodes.
+  Hatters Farm, Bishop's Stortford, London Liverpool Street, postcodes.
 - Never translate an `<option value>` or `<input value>`: those values go to
   the Google Sheet and must stay English. Only the visible text is keyed.
 - Keep the numbers, dates and times the English gives, converted to the local

@@ -68,13 +68,13 @@ window.I18N = {
     "prog.1.h": "Ankomst",
     "prog.1.p": "Det blir dryck och musik innan vigseln börjar.",
     "prog.2.time": "13.30",
-    "prog.2.h": "Vigsel",
+    "prog.2.h": "💍 Vigsel",
     "prog.2.p": "Under pilträden vid sjön, OAVSETT väder!!!",
     "prog.3.time": "14.00",
     "prog.3.h": "Häng och lekar",
     "prog.3.p": "Dryck, tilltugg, prat och lekar!",
     "prog.4.time": "15.00",
-    "prog.4.h": "Mat",
+    "prog.4.h": "🍽️ Mat",
     "prog.4.p":
       "Vi sätter oss till bords med smårätter att dela på, vin, dryck och efterrätt. Tal under middagen.",
     "prog.5.time": "17.30",
@@ -82,7 +82,7 @@ window.I18N = {
     "prog.5.p":
       "Några fler lekar efter maten, och en stund att vila och göra sig redo för ceilidhn.",
     "prog.6.time": "18.30",
-    "prog.6.h": "Ceilidh och dans",
+    "prog.6.h": "💃🏽 Ceilidh och dans",
     "prog.6.p": "Ceilidh, coverlåtar och vickning.",
     "prog.7.time": "Midnatt",
     "prog.7.h": "Dags att åka hem",
@@ -96,7 +96,7 @@ window.I18N = {
     "travel.maps": "Öppna i Google Maps",
     "travel.train.h": "Med tåg",
     "travel.train.p1":
-      "Närmaste station är Moreton-in-Marsh (20 minuter med taxi), med regelbundna tåg från London Paddington.",
+      "Närmaste station är Bishop's Stortford, med regelbundna tåg från London Liverpool Street. Därifrån kostar en taxi runt 10 pund.",
     "travel.train.p2":
       "Skriv er ankomsttid i OSA-formuläret, så gör vi vårt bästa för att samordna skjuts från stationen.",
     "travel.timetables": "Tidtabeller",
@@ -231,14 +231,14 @@ window.I18N = {
     "prog.1.h": "Άφιξη",
     "prog.1.p": "Θα υπάρχουν ποτά και μουσική πριν ξεκινήσει η τελετή.",
     "prog.2.time": "13:30",
-    "prog.2.h": "Τελετή",
+    "prog.2.h": "💍 Τελετή",
     "prog.2.p":
       "Κάτω από τις ιτιές δίπλα στη λίμνη, ΟΠΟΙΟΝΔΗΠΟΤΕ καιρό κι αν κάνει!!!",
     "prog.3.time": "14:00",
     "prog.3.h": "Χαλάρωση και παιχνίδια",
     "prog.3.p": "Ποτά, σνακ, κουβέντα και παιχνίδια!",
     "prog.4.time": "15:00",
-    "prog.4.h": "Φαγητό",
+    "prog.4.h": "🍽️ Φαγητό",
     "prog.4.p":
       "Θα καθίσουμε στο τραπέζι με πιάτα για μοίρασμα, κρασί, ποτά και επιδόρπιο. Με λόγους στο ενδιάμεσο.",
     "prog.5.time": "17:30",
@@ -246,7 +246,7 @@ window.I18N = {
     "prog.5.p":
       "Μερικά ακόμη παιχνίδια για να χωνέψουμε το φαγητό, και λίγη ξεκούραση πριν από το Ceilidh.",
     "prog.6.time": "18:30",
-    "prog.6.h": "Ceilidh και χορός",
+    "prog.6.h": "💃🏽 Ceilidh και χορός",
     "prog.6.p": "Ceilidh, διασκευές και μεταμεσονύχτιο φαγητό.",
     "prog.7.time": "Μεσάνυχτα",
     "prog.7.h": "Ώρα για σπίτι",
@@ -260,7 +260,7 @@ window.I18N = {
     "travel.maps": "Άνοιγμα στους Χάρτες Google",
     "travel.train.h": "Με τρένο",
     "travel.train.p1":
-      "Ο πλησιέστερος σταθμός είναι το Moreton-in-Marsh (20 λεπτά με ταξί), με τακτικά δρομολόγια από το London Paddington.",
+      "Ο πλησιέστερος σταθμός είναι το Bishop's Stortford, με τακτικά τρένα από το London Liverpool Street. Από εκεί, ένα ταξί κοστίζει περίπου 10 λίρες.",
     "travel.train.p2":
       "Γράψτε μας την ώρα άφιξής σας στη φόρμα απάντησης και θα κάνουμε ό,τι μπορούμε για να οργανώσουμε μεταφορά από τον σταθμό.",
     "travel.timetables": "Δρομολόγια τρένων",
@@ -394,13 +394,13 @@ window.I18N = {
     "prog.1.h": "Llegada",
     "prog.1.p": "Habrá bebidas y música antes de que empiece la ceremonia.",
     "prog.2.time": "1:30 p. m.",
-    "prog.2.h": "Ceremonia",
+    "prog.2.h": "💍 Ceremonia",
     "prog.2.p": "Bajo los sauces junto al lago, ¡llueva, truene o relampaguee!",
     "prog.3.time": "2:00 p. m.",
     "prog.3.h": "Convivio y juegos",
     "prog.3.p": "¡Bebidas, botanas, plática y juegos!",
     "prog.4.time": "3:00 p. m.",
-    "prog.4.h": "Comida",
+    "prog.4.h": "🍽️ Comida",
     "prog.4.p":
       "Nos sentaremos a compartir platillos, vino, bebidas y postre. Habrá discursos durante la comida.",
     "prog.5.time": "5:30 p. m.",
@@ -408,7 +408,7 @@ window.I18N = {
     "prog.5.p":
       "Unos juegos más para bajar la comida y un rato para descansar y alistarse para el Ceilidh.",
     "prog.6.time": "6:30 p. m.",
-    "prog.6.h": "Ceilidh y baile",
+    "prog.6.h": "💃🏽 Ceilidh y baile",
     "prog.6.p": "Ceilidh, covers y comida de medianoche.",
     "prog.7.time": "Medianoche",
     "prog.7.h": "Hora de irse a casa",
@@ -422,7 +422,7 @@ window.I18N = {
     "travel.maps": "Abrir en Google Maps",
     "travel.train.h": "En tren",
     "travel.train.p1":
-      "La estación más cercana es Moreton-in-Marsh (a 20 minutos en taxi), con trenes frecuentes desde London Paddington.",
+      "La estación más cercana es Bishop's Stortford, con trenes frecuentes desde London Liverpool Street. De ahí, un taxi cuesta unas 10 libras.",
     "travel.train.p2":
       "Indíquennos su hora de llegada en el formulario de confirmación y haremos lo posible por coordinar aventones desde la estación.",
     "travel.timetables": "Horarios de trenes",

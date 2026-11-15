@@ -9,11 +9,12 @@
   --green-700: #4f5e44;
   --green-600: #4d6a2c;
   --green-300: #b9c9a6;
+  --green-250: #d6e2c8;
   --green-200: #e4ecd8;
   --green-100: #e6eedb;
   --green-50: #f4f7ee;
 
-  --spring-green-400: #56781b;
+  --spring-green-400: #4a6a15;
 
   --lime-300: #cfe58a;
   --lime-400: #bdd96a;
@@ -34,11 +35,13 @@
   --color-text-soft: var(--green-800);
   --color-text-muted: var(--green-700);
   --color-text-accent: var(--green-600);
+  /* The timeline's connecting line */
+  --color-rule: var(--green-300);
 
   /* Text on dark surfaces and over the hero painting */
   --color-on-dark: var(--green-50);
   --color-on-dark-soft: var(--green-100);
-  --color-on-dark-muted: var(--green-300);
+  --color-on-dark-muted: var(--green-250); /* 4.6:1 on the spring green */
   --color-on-dark-ok: var(--lime-300);
   --color-on-dark-err: var(--rose-200);
 
