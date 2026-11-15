@@ -507,7 +507,7 @@ section {
 /* ---------- Getting there ---------- */
 .travel-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: var(--space-7);
 }
 .travel-col h3 {

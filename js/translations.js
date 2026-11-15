@@ -89,7 +89,6 @@ window.I18N = {
     "prog.7.p":
       "Då är vi nog alla utdansade, så det är dags att åka hem. Boka taxi i förväg (det finns ingen Uber här).",
 
-    "travel.kicker": "Hitta oss",
     "travel.h": "Så tar ni er hit",
     "travel.car.h": "Med bil",
     "travel.car.p2":
@@ -101,6 +100,9 @@ window.I18N = {
     "travel.train.p2":
       "Skriv er ankomsttid i OSA-formuläret, så gör vi vårt bästa för att samordna skjuts från stationen.",
     "travel.timetables": "Tidtabeller",
+    "travel.taxis.h": "Med taxi",
+    "travel.taxis.p1": "Boka er taxi hem i god tid!",
+    "travel.taxis.p2": "Taxibolag vi rekommenderar:",
 
     "faq.kicker": "Bra att veta",
     "faq.h": "Vanliga frågor",
@@ -251,7 +253,6 @@ window.I18N = {
     "prog.7.p":
       "Θα έχουμε χορέψει μέχρι τελικής πτώσης, οπότε ώρα για το σπίτι. Κλείστε ταξί από πριν (εδώ δεν υπάρχει Uber).",
 
-    "travel.kicker": "Βρείτε μας",
     "travel.h": "Πώς θα έρθετε",
     "travel.car.h": "Με αυτοκίνητο",
     "travel.car.p2":
@@ -263,6 +264,9 @@ window.I18N = {
     "travel.train.p2":
       "Γράψτε μας την ώρα άφιξής σας στη φόρμα απάντησης και θα κάνουμε ό,τι μπορούμε για να οργανώσουμε μεταφορά από τον σταθμό.",
     "travel.timetables": "Δρομολόγια τρένων",
+    "travel.taxis.h": "Με ταξί",
+    "travel.taxis.p1": "Κλείστε το ταξί της επιστροφής σας πολύ νωρίτερα!",
+    "travel.taxis.p2": "Εταιρείες ταξί που προτείνουμε:",
 
     "faq.kicker": "Καλό να ξέρετε",
     "faq.h": "Συχνές ερωτήσεις",
@@ -411,7 +415,6 @@ window.I18N = {
     "prog.7.p":
       "Para entonces ya no vamos a poder ni bailar, así que es hora de irse a casa. Reserven su taxi con anticipación (aquí no hay Uber).",
 
-    "travel.kicker": "Encuéntrennos",
     "travel.h": "Cómo llegar",
     "travel.car.h": "En auto",
     "travel.car.p2":
@@ -423,6 +426,9 @@ window.I18N = {
     "travel.train.p2":
       "Indíquennos su hora de llegada en el formulario de confirmación y haremos lo posible por coordinar aventones desde la estación.",
     "travel.timetables": "Horarios de trenes",
+    "travel.taxis.h": "En taxi",
+    "travel.taxis.p1": "¡Reserven su taxi de regreso con mucha anticipación!",
+    "travel.taxis.p2": "Compañías de taxis recomendadas:",
 
     "faq.kicker": "Para que lo sepan",
     "faq.h": "Preguntas frecuentes",

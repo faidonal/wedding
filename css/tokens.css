@@ -13,6 +13,8 @@
   --green-100: #e6eedb;
   --green-50: #f4f7ee;
 
+  --spring-green-400: #56781b;
+
   --lime-300: #cfe58a;
   --lime-400: #bdd96a;
   --lime-200: #e3f0b8;
@@ -25,7 +27,7 @@
   /* Surfaces */
   --color-bg: var(--green-50);
   --color-surface: var(--green-200);
-  --color-surface-dark: var(--green-900);
+  --color-surface-dark: var(--spring-green-400);
 
   /* Text on light surfaces */
   --color-text: var(--green-950);
@@ -65,8 +67,9 @@
   /* Fraunces and Karla have no Greek letters; Literata and Commissioner
      supply them. Their files only download when Greek text is on screen. */
   --serif: "Fraunces", "Literata", Georgia, "Times New Roman", serif;
-  --sans: "Karla", "Commissioner", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+  --sans:
+    "Karla", "Commissioner", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   /* The monogram and the couple's names always stay in Fraunces */
   --brand: "Fraunces", Georgia, "Times New Roman", serif;
 
@@ -93,8 +96,9 @@
 /* Greek: lead with the Greek-capable faces so a line never mixes two fonts */
 :root:lang(el) {
   --serif: "Literata", "Fraunces", Georgia, "Times New Roman", serif;
-  --sans: "Commissioner", "Karla", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+  --sans:
+    "Commissioner", "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 }
 
 /* ---------- Space ---------- */
